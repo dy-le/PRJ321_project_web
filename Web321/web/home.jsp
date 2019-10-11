@@ -59,7 +59,7 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+            
         </div>
-        <jsp:include page="footer.html"/> 
     </body>
 </html>
