@@ -13,7 +13,7 @@
         <title>login Page</title>
     </head>
     <body>
-        <jsp:include page="header.jsp"/>
+        <%--<jsp:include page="header.jsp"/>--%>
             <form class="px-4 py-3">
                 <div class="form-group">
                     <label for="exampleDropdownFormEmail1">Email address</label>
