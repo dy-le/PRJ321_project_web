@@ -8,140 +8,58 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Home Page</title>
         <style type="text/css">
-            * {box-sizing:border-box}
 
-            /* Slideshow container */
-            .slideshow-container {
-                max-width: 1000px;
-                position: relative;
-                margin: auto;
-            }
-
-            /* Hide the images by default */
-            .mySlides {
-                display: none;
-            }
-
-            /* Next & previous buttons */
-            .prev, .next {
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                width: auto;
-                margin-top: -22px;
-                padding: 16px;
-                color: white;
-                font-weight: bold;
-                font-size: 18px;
-                transition: 0.6s ease;
-                border-radius: 0 3px 3px 0;
-                user-select: none;
-            }
-
-            /* Position the "next button" to the right */
-            .next {
-                right: 0;
-                border-radius: 3px 0 0 3px;
-            }
-
-            /* On hover, add a black background color with a little bit see-through */
-            .prev:hover, .next:hover {
-                background-color: rgba(0,0,0,0.8);
-            }
-
-            /* Caption text */
-            .text {
-                color: #f2f2f2;
-                font-size: 15px;
-                padding: 8px 12px;
-                position: absolute;
-                bottom: 8px;
-                width: 100%;
-                text-align: center;
-            }
-
-            /* Number text (1/3 etc) */
-            .numbertext {
-                color: #f2f2f2;
-                font-size: 12px;
-                padding: 8px 12px;
-                position: absolute;
-                top: 0;
-            }
-
-            /* The dots/bullets/indicators */
-            .dot {
-                cursor: pointer;
-                height: 15px;
-                width: 15px;
-                margin: 0 2px;
-                background-color: #bbb;
-                border-radius: 50%;
-                display: inline-block;
-                transition: background-color 0.6s ease;
-            }
-
-            .active, .dot:hover {
-                background-color: #717171;
-            }
-
-            /* Fading animation */
-            .fade {
-                -webkit-animation-name: fade;
-                -webkit-animation-duration: 1.5s;
-                animation-name: fade;
-                animation-duration: 1.5s;
-            }
-
-            @-webkit-keyframes fade {
-                from {opacity: .4}
-                to {opacity: 1}
-            }
-
-            @keyframes fade {
-                from {opacity: .4}
-                to {opacity: 1}
-            }
         </style>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <!-- Slideshow container -->
-        <div class="slideshow-container">
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
 
-            <!-- Full-width images with number and caption text -->
-            <div class="mySlides fade">
-                <div class="numbertext">1 / 3</div>
-                <img src="media/img1.jpg" style="width:100%">
-                <div class="text">Caption Text</div>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="media/img1.jpg" alt="Los Angeles">
+                        <h3>New York3123</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="media/img2.png" alt="Chicago">
+                        <h3>New York</h3>
+                        <p>We love the Big Apple!</p>
+                    </div>
+
+                    <div class="item">
+                        <img src="media/img3.png" alt="New York">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
-                <img src="media/img2.png" style="width:100%">
-                <div class="text">Caption Two</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
-                <img src="media/img3.png" style="width:100%">
-                <div class="text">Caption Three</div>
-            </div>
-
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-        <br>
-
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
+        <jsp:include page="footer.html"/> 
     </body>
 </html>
