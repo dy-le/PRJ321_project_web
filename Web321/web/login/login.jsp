@@ -43,7 +43,7 @@
                 <!--<p class="mt-5 mb-3 text-muted">© 2017-2018</p>-->
                 
             </form>
-            <jsp:include page="../footer/footermini.html"/>
+            <jsp:include page="../footer/footer.html"/>
         </div>
         
 </body>
