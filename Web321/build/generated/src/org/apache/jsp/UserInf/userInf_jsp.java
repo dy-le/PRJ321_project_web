@@ -60,7 +60,7 @@ public final class userInf_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                height: 400px;\n");
       out.write("            }\n");
       out.write("            .col-md-3{\n");
-      out.write("                background: #ff9b00;\n");
+      out.write("                background: #ff9b11 ;\n");
       out.write("                padding: 4%;\n");
       out.write("                border-top-left-radius: 0.5rem;\n");
       out.write("                border-bottom-left-radius: 0.5rem;\n");
@@ -103,7 +103,6 @@ public final class userInf_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"contact-info\">\n");
       out.write("                        <img src=\"../media/LOGO.png\" style=\"width:100%; height: 100%\" height=40 width=40 alt=\"image\"/>\n");
       out.write("                        <h2 >Your Information</h2>\n");
-      out.write("                        <h4>Enjoy</h4>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("                <div class=\"col-md-9\">\n");
@@ -111,11 +110,11 @@ public final class userInf_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <div class=\"form-group\">\n");
       out.write("                            <label class=\"control-label col-sm-2\" for=\"fname\">Name:</label>\n");
       out.write("                            <div class=\"col-sm-10\">          \n");
-      out.write("                                <input type=\"text\" class=\"form-control\" id=\"fname\" placeholder=\"Enter First Name\" name=\"fname\">\n");
+      out.write("                                <label class=\"form-control\">Hihi</label>\n");
       out.write("                            </div>\n");
       out.write("                        </div>\n");
       out.write("                        <div class=\"form-group\">\n");
-      out.write("                            <label class=\"control-label col-sm-2\" for=\"lname\">Last Name:</label>\n");
+      out.write("                            <label class=\"control-label col-sm-2\" for=\"lname\">Birth Day:</label>\n");
       out.write("                            <div class=\"col-sm-10\">          \n");
       out.write("                                <input type=\"text\" class=\"form-control\" id=\"lname\" placeholder=\"Enter Last Name\" name=\"lname\">\n");
       out.write("                            </div>\n");
@@ -127,14 +126,14 @@ public final class userInf_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            </div>\n");
       out.write("                        </div>\n");
       out.write("                        <div class=\"form-group\">\n");
-      out.write("                            <label class=\"control-label col-sm-2\" for=\"comment\">Comment:</label>\n");
+      out.write("                            <label class=\"control-label col-sm-2\" for=\"comment\">Detail</label>\n");
       out.write("                            <div class=\"col-sm-10\">\n");
       out.write("                                <textarea class=\"form-control\" rows=\"5\" id=\"comment\"></textarea>\n");
       out.write("                            </div>\n");
       out.write("                        </div>\n");
       out.write("                        <div class=\"form-group\">        \n");
       out.write("                            <div class=\"col-sm-offset-2 col-sm-10\">\n");
-      out.write("                                <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n");
+      out.write("                                <button type=\"homeback\" class=\"btn btn-default\">Home Back</button>\n");
       out.write("                            </div>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
