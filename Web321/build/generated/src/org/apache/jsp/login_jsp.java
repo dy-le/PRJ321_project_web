@@ -54,14 +54,14 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <body>\r\n");
       out.write("        ");
       out.write("\r\n");
-      out.write("            <form class=\"px-4 py-3\">\r\n");
+      out.write("        <form action=\"login\"class=\"px-4 py-3\">\r\n");
       out.write("                <div class=\"form-group\">\r\n");
       out.write("                    <label for=\"exampleDropdownFormEmail1\">Email address</label>\r\n");
-      out.write("                    <input type=\"email\" class=\"form-control\" id=\"exampleDropdownFormEmail1\" placeholder=\"email@example.com\">\r\n");
+      out.write("                    <input type=\"email\"  class=\"form-control\" id=\"exampleDropdownFormEmail1\" placeholder=\"email@example.com\" name=\"inputEmail\">\r\n");
       out.write("                </div>\r\n");
       out.write("                <div class=\"form-group\">\r\n");
       out.write("                    <label for=\"exampleDropdownFormPassword1\">Password</label>\r\n");
-      out.write("                    <input type=\"password\" class=\"form-control\" id=\"exampleDropdownFormPassword1\" placeholder=\"Password\">\r\n");
+      out.write("                    <input type=\"password\" class=\"form-control\" id=\"exampleDropdownFormPassword1\" placeholder=\"Password\" name=\"inputPassword\">\r\n");
       out.write("                </div>\r\n");
       out.write("                <div class=\"form-check\">\r\n");
       out.write("                    <input type=\"checkbox\" class=\"form-check-input\" id=\"dropdownCheck\">\r\n");
@@ -69,7 +69,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        Remember me\r\n");
       out.write("                    </label>\r\n");
       out.write("                </div>\r\n");
-      out.write("                <button type=\"submit\" class=\"btn btn-primary\">Sign in</button>\r\n");
+      out.write("            <button name=\"signin\" value=\"signin\" type=\"submit\" class=\"btn btn-primary\">Sign in</button>\r\n");
       out.write("            </form>\r\n");
       out.write("            <div class=\"dropdown-divider\"></div>\r\n");
       out.write("                <a class=\"dropdown-item\" href=\"#\">New around here? Sign up</a>\r\n");

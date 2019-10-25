@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package controller;
+
 import context.DBContext;
 import dao.AccountDAO;
 import java.io.IOException;
@@ -39,12 +40,14 @@ public class LoginServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         try (PrintWriter out = response.getWriter()) {
             //get value from login.jsp
-            if (request.getParameter("inputEmail") != null && request.getParameter("inputPassword") != null) {
+            if (request.getParameter("signin")!= null 
+                    && request.getParameter("inputEmail") != null 
+                    && request.getParameter("inputPassword") != null) {
                 String username = request.getParameter("inputEmail");
                 response.getWriter().println(username);
                 String password = request.getParameter("inputPassword");
                 response.getWriter().println(password);
-                
+
                 AccountDAO dao = new AccountDAO();
                 List<Account> acc = dao.login(username, password);
 

@@ -68,18 +68,34 @@ public class AccountDAO {
         } catch (Exception e) {
             System.out.println(e.getMessage() + " -->  AccountDAO.login");
         }
-
         return list;
     }
 
-    public static void main(String[] args) {
-        AccountDAO dao = new AccountDAO();
-        List<Account> list = dao.login("anhnt@fpt.edu.vn", "ahihi123");
+    public void register(String username, String email, String password) {
+        String sql = "INSERT INTO [Account] (Email, Username,Password,RoleAcc)"
+                + "  VALUES ('" + email + "','" + username + "','" + password + "','user')";
         try {
-            for (int i = 0; i < list.size(); i++) {
-                System.out.println(list.get(i).getUserID());
-            }
+            Connection conn = new DBContext().getConnection();
+            conn.prepareStatement(sql).execute();
+            conn.close();
         } catch (Exception e) {
+            System.out.println(e.getMessage() + " -->  AccountDAO.register");
         }
+    }
+
+    public static void main(String[] args) {
+
+        //check register
+//        AccountDAO dao = new AccountDAO();
+//        dao.register("bangpc@fpt.edu.vn", "bangpc@fpt.edu.vn", "ahihi123");
+//        check login
+//        AccountDAO dao = new AccountDAO();
+//        List<Account> list = dao.login("anhnt@fpt.edu.vn", "ahihi123");
+//        try {
+//            for (int i = 0; i < list.size(); i++) {
+//                System.out.println(list.get(i).getUserID());
+//            }
+//        } catch (Exception e) {
+//        }
     }
 }

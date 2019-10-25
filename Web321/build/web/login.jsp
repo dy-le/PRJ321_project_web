@@ -29,7 +29,7 @@
                         Remember me
                     </label>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+            <button name="signin" value="signin" type="submit" class="btn btn-primary">Sign in</button>
             </form>
             <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">New around here? Sign up</a>
