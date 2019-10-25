@@ -66,8 +66,8 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\r\n");
       out.write("    <body class=\"text-center\" data-gr-c-s-loaded=\"true\">\r\n");
       out.write("        <div class=\"container\">\r\n");
-      out.write("            <form class=\"form-signin\">\r\n");
-      out.write("                <img class=\"mb-4\" src=\"../media/LOGO.png\" alt=\"\" width=\"72\" height=\"72\">\r\n");
+      out.write("            <form class=\"form-signin\" action=\"login\">\r\n");
+      out.write("                <img class=\"mb-4\" src=\"../media/LOGO.png\" alt=\"\" width=\"100\" height=\"100\">\r\n");
       out.write("                <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>\r\n");
       out.write("                <label for=\"inputEmail\" class=\"sr-only\">Email address</label>\r\n");
       out.write("                <input type=\"email\" id=\"inputEmail\" class=\"form-control\" placeholder=\"Email address\" required=\"\" autofocus=\"\">\r\n");
@@ -78,7 +78,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <input type=\"checkbox\" value=\"remember-me\"> Remember me\r\n");
       out.write("                    </label>\r\n");
       out.write("                </div>\r\n");
-      out.write("                <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button>\r\n");
+      out.write("                <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\" name=\"signin\" value=\"signin\">Sign in</button>\r\n");
       out.write("                <!--<p class=\"mt-5 mb-3 text-muted\">© 2017-2018</p>-->\r\n");
       out.write("                \r\n");
       out.write("            </form>\r\n");
