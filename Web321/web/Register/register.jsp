@@ -154,7 +154,7 @@
                                     </div>
 
                                     <div>
-                                        <label>Password</label>
+                                        <label>  Password</label>
                                         <input type="password"  class="form-control" onfocus="if (this.value == 'Password') {
                                                     this.value = '';
                                                 }" value="Password" required name="password2">
