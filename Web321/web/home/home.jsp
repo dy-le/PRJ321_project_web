@@ -33,19 +33,19 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="media/img1.jpg" alt="Los Angeles">
+                        <img src="../media/img1.jpg" alt="Los Angeles">
                         <h3>New York3123</h3>
                         <p>We love the Big Apple!</p>
                     </div>
 
                     <div class="item">
-                        <img src="media/img2.png" alt="Chicago">
+                        <img src="../media/img2.png" alt="Chicago">
                         <h3>New York</h3>
                         <p>We love the Big Apple!</p>
                     </div>
 
                     <div class="item">
-                        <img src="media/img3.png" alt="New York">
+                        <img src="../media/img3.png" alt="New York">
                     </div>
                 </div>
 

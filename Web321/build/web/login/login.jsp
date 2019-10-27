@@ -27,7 +27,7 @@
     </head>
     <body class="text-center" data-gr-c-s-loaded="true">
         <div class="container">
-            <form class="form-signin">
+            <form class="form-signin" action="../home/home.jsp">
                 <img class="mb-4" src="../media/LOGO.png" alt="" width="72" height="72">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <label for="inputEmail" class="sr-only">Email address</label>

@@ -66,7 +66,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("    <body class=\"text-center\" data-gr-c-s-loaded=\"true\">\n");
       out.write("        <div class=\"container\">\n");
-      out.write("            <form class=\"form-signin\">\n");
+      out.write("            <form class=\"form-signin\" action=\"../home/home.jsp\">\n");
       out.write("                <img class=\"mb-4\" src=\"../media/LOGO.png\" alt=\"\" width=\"72\" height=\"72\">\n");
       out.write("                <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>\n");
       out.write("                <label for=\"inputEmail\" class=\"sr-only\">Email address</label>\n");
@@ -83,7 +83,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                \n");
       out.write("            </form>\n");
       out.write("            ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "../footer/footer.html", out, false);
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "../footer/footermini.html", out, false);
       out.write("\n");
       out.write("        </div>\n");
       out.write("        \n");
