@@ -587,7 +587,7 @@ li {
 }
 
 .catagory-title {
-    width: 200px;
+    width: 100px;
     height: 50px;
     background-color: #fff;
     position: absolute;
@@ -897,7 +897,7 @@ li {
 }
 
 .widget-title > h6 {
-    background: #fee2d9;
+    background: #99e6ff;
     height: 40px;
     width: 100%;
     line-height: 40px;
@@ -1446,22 +1446,22 @@ li {
 }
 
 #pattern-switcher {
-	width: 120px;
-	background-color: #fc6c3f;
-	position: fixed;
-	top: 15%;
-	z-index: 9999;
-	cursor: pointer;
-	height: 50px;
+    width: 120px;
+    background-color: #fc6c3f;
+    position: fixed;
+    top: 15%;
+    z-index: 9999;
+    cursor: pointer;
+    height: 50px;
     right: 0;
     color: #fff;
-	font-size: 12px;
-	line-height: 50px;
-	text-align: center;
-	text-transform: uppercase;
+    font-size: 12px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
     letter-spacing: 1px;
     -webkit-transition-duration: 500ms;
-            transition-duration: 500ms;
+    transition-duration: 500ms;
 }
 
 #pattern-switcher.pattern-remove {
@@ -1469,21 +1469,21 @@ li {
 }
 
 #pattern-switcher:hover {
-	background-color: #e3410e;
+    background-color: #e3410e;
 }
 
 #patter-close > i {
-	position: fixed;
-	width: 20px;
-	height: 20px;
-	background-color: #111;
-	font-size: 11px;
-	line-height: 20px;
-	border-radius: 50%;
-	right: 110px;
-	top: calc(15% - 10px);
-	text-align: center;
-	z-index: 99999;
-	color: #fff;
-	cursor: pointer;
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: #111;
+    font-size: 11px;
+    line-height: 20px;
+    border-radius: 50%;
+    right: 110px;
+    top: calc(15% - 10px);
+    text-align: center;
+    z-index: 99999;
+    color: #fff;
+    cursor: pointer;
 }
