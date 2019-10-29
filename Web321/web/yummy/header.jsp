@@ -51,7 +51,7 @@
                                     <a href="${pageContext.request.contextPath}/login/login.jsp">Sing in</a>
                                 </div>
                                 <div class="register">
-                                    <a href="register.html">Sing up</a>
+                                    <a href="${pageContext.request.contextPath}/register.jsp">Sing up</a>
                                 </div>
                             </div>
                             <!-- Search Button Area -->

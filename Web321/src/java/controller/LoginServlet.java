@@ -47,6 +47,12 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        response.sendRedirect("login/login.jsp");
+        HttpSession session = request.getSession();
+        Account acc = (Account)session.getAttribute("login");
+        if(acc != null){
+            request.getRequestDispatcher("home").forward(request, response);
+        }
+//        response.sendRedirect( request.getContextPath() + "/login/login.jsp");
         request.getRequestDispatcher("login/login.jsp").forward(request, response);
     }
 
@@ -81,13 +87,13 @@ public class LoginServlet extends HttpServlet {
                 if (username.equals("admin")) {
                     role = "admin";
                 }
-                
+
                 session.setAttribute("login", acc);
-                session.setMaxInactiveInterval(15 * 60);    
-                
+                session.setMaxInactiveInterval(15 * 60);
+
                 response.addCookie(new Cookie("id", String.valueOf(acc.get(0).getUserID())));
-                
-                request.getRequestDispatcher("yummy/index_1.jsp").forward(request, response);
+
+                request.getRequestDispatcher(request.getContextPath() + "yummy/index_1.jsp").forward(request, response);
             } else {
                 doGet(request, response);
             }

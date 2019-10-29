@@ -41,6 +41,7 @@
                     </label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit" name="signin" value="signin">Sign in</button>
+                <button class="btn btn-block" type="button" style="background-color: #218838"><a href="${pageContext.request.contextPath}/register" style="color: white"> Sign up</button>
                 <p class="mt-5 mb-3 text-muted">© 2019-2020</p>
                 
             </form>
