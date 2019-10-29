@@ -243,7 +243,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <a href="#">
+                                        <a href="${pageContext.request.contextPath}/post?idPost=${first.id}">
                                             <h2 class="post-headline">${first.header}</h2>
                                         </a>
                                         <p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.</p>
@@ -251,7 +251,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <c:forEach var="post" items="${listpost}">
+                            <c:forEach var="post" items="${listpost.subList(1, 5)}">
                                 <!-- Single Post -->
                                 <div class="col-12 col-md-6">
                                     <div class="single-post wow fadeInUp" data-wow-delay=".4s">
