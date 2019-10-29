@@ -8,6 +8,7 @@ package controller;
 import dao.PostDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -40,10 +41,11 @@ public class PostServlet extends HttpServlet {
             post pt = dao.select(id);
 //            response.sendRedirect("yummy/single.jsp");
             request.setAttribute("post", pt);
-            request.setAttribute("haha", "hoho");
+            List<post> list = dao.select();
+            request.setAttribute("listpost", list);
             RequestDispatcher rd = request.getRequestDispatcher("yummy/single.jsp");
             rd.forward(request, response);
-        } catch(Exception Ex){
+        } catch (Exception Ex) {
             response.getWriter().println(Ex);
         }
     }

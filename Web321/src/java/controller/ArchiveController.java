@@ -40,7 +40,7 @@ public class ArchiveController extends HttpServlet {
             List<post> list = dao.select();
 //            response.sendRedirect("yummy/index_1.jsp");
             request.setAttribute("listpost", list);
-            RequestDispatcher rd = request.getRequestDispatcher("yummy/index_1.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("yummy/archive.jsp");
             rd.forward(request, response);
         } catch (Exception Ex) {
             response.getWriter().println(Ex);

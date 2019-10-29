@@ -80,7 +80,7 @@
                     <!-- Logo Area Start -->
                     <div class="col-12">
                         <div class="logo_area text-center">
-                            <a href="index.jsp" class="yummy-logo">Yummy Blog</a>
+                            <a href="${pageContext.request.contextPath}/home" class="yummy-logo">Yummy Blog</a>
                         </div>
                     </div>
                 </div>
@@ -98,8 +98,8 @@
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="yummyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                         <div class="dropdown-menu" aria-labelledby="yummyDropdown">
-                                            <a class="dropdown-item" href="index.jsp">Home</a>
-                                            <a class="dropdown-item" href="archive.html">Archive</a>
+                                            <a class="dropdown-item" href="${pageContext.request.contextPath}/home">Home</a>
+                                            <a class="dropdown-item" href="${pageContext.request.contextPath}/archive">Archive</a>
                                             <a class="dropdown-item" href="single.html">Single Blog</a>
                                             <a class="dropdown-item" href="static.html">Static Page</a>
                                             <a class="dropdown-item" href="contact.html">Contact</a>
@@ -112,7 +112,7 @@
                                         <a class="nav-link" href="#">Categories</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="archive.html">Archive</a>
+                                        <a class="nav-link" href="${pageContext.request.contextPath}/archive">Archive</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">About</a>

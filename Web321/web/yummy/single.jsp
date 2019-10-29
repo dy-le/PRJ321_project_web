@@ -4,6 +4,7 @@
     Author     : lpxed
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -31,9 +32,9 @@
 
     <body>
         <!-- Preloader Start -->
-<!--        <div id="preloader">
-            <div class="yummy-load"></div>
-        </div>-->
+        <!--        <div id="preloader">
+                    <div class="yummy-load"></div>
+                </div>-->
 
 
         <jsp:include page="header.jsp"/>
@@ -90,7 +91,7 @@
                                 <div class="single-post">
                                     <!-- Post Thumb -->
                                     <div class="post-thumb">
-                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/10.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/${post.img}" alt="">
                                     </div>
                                     <!-- Post Content -->
                                     <div class="post-content">
@@ -160,106 +161,33 @@
                                     <h4 class="mb-30">Related post</h4>
 
                                     <div class="related-post-slider owl-carousel">
-                                        <!-- Single Related Post-->
-                                        <div class="single-post">
-                                            <!-- Post Thumb -->
-                                            <div class="post-thumb">
-                                                <img src="${pageContext.request.contextPath}/yummy/img/blog-img/15.jpg" alt="">
-                                            </div>
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <div class="post-meta d-flex">
-                                                    <div class="post-author-date-area d-flex">
-                                                        <!-- Post Author -->
-                                                        <div class="post-author">
-                                                            <a href="#">By Marian</a>
-                                                        </div>
-                                                        <!-- Post Date -->
-                                                        <div class="post-date">
-                                                            <a href="#">May 19, 2017</a>
+                                        <c:forEach var="pt" items="${listpost}">
+                                            <!-- Single Related Post-->
+                                            <div class="single-post">
+                                                <!-- Post Thumb -->
+                                                <div class="post-thumb">
+                                                    <img src="${pageContext.request.contextPath}/yummy/img/blog-img/${pt.img}" alt="${pt.img}">
+                                                </div>
+                                                <!-- Post Content -->
+                                                <div class="post-content">
+                                                    <div class="post-meta d-flex">
+                                                        <div class="post-author-date-area d-flex">
+                                                            <!-- Post Author -->
+                                                            <div class="post-author">
+                                                                <a href="#">By ${pt.acc}</a>
+                                                            </div>
+                                                            <!-- Post Date -->
+                                                            <div class="post-date">
+                                                                <a href="#">${pt.date}</a>
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <a href="${pageContext.request.contextPath}/post?idPost=${pt.id}">
+                                                        <h6>${pt.header}</h6>
+                                                    </a>
                                                 </div>
-                                                <a href="#">
-                                                    <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                                </a>
                                             </div>
-                                        </div>
-                                        <!-- Single Related Post-->
-                                        <div class="single-post">
-                                            <!-- Post Thumb -->
-                                            <div class="post-thumb">
-                                                <img src="${pageContext.request.contextPath}/yummy/img/blog-img/5.jpg" alt="">
-                                            </div>
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <div class="post-meta d-flex">
-                                                    <div class="post-author-date-area d-flex">
-                                                        <!-- Post Author -->
-                                                        <div class="post-author">
-                                                            <a href="#">By Marian</a>
-                                                        </div>
-                                                        <!-- Post Date -->
-                                                        <div class="post-date">
-                                                            <a href="#">May 19, 2017</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <a href="#">
-                                                    <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Related Post-->
-                                        <div class="single-post">
-                                            <!-- Post Thumb -->
-                                            <div class="post-thumb">
-                                                <img src="${pageContext.request.contextPath}/yummy/img/blog-img/16.jpg" alt="">
-                                            </div>
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <div class="post-meta d-flex">
-                                                    <div class="post-author-date-area d-flex">
-                                                        <!-- Post Author -->
-                                                        <div class="post-author">
-                                                            <a href="#">By Marian</a>
-                                                        </div>
-                                                        <!-- Post Date -->
-                                                        <div class="post-date">
-                                                            <a href="#">May 19, 2017</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <a href="#">
-                                                    <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- Single Related Post-->
-                                        <div class="single-post">
-                                            <!-- Post Thumb -->
-                                            <div class="post-thumb">
-                                                <img src="${pageContext.request.contextPath}/yummy/img/blog-img/5.jpg" alt="">
-                                            </div>
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <div class="post-meta d-flex">
-                                                    <div class="post-author-date-area d-flex">
-                                                        <!-- Post Author -->
-                                                        <div class="post-author">
-                                                            <a href="#">By Marian</a>
-                                                        </div>
-                                                        <!-- Post Date -->
-                                                        <div class="post-date">
-                                                            <a href="#">May 19, 2017</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <a href="#">
-                                                    <h6>The Top Breakfast And Brunch Spots In Hove</h6>
-                                                </a>
-                                            </div>
-                                        </div>
+                                        </c:forEach>
                                     </div>
                                 </div>
 

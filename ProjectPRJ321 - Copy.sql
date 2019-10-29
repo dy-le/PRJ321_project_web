@@ -1,5 +1,10 @@
 ﻿Use master;
 GO
+if exists (select * from sysdatabases where name='ProjectPRJ321')
+		drop database ProjectPRJ321
+go
+
+GO
 CREATE DATABASE ProjectPRJ321
 GO
 USE ProjectPRJ321
@@ -45,6 +50,8 @@ CREATE TABLE Paper (
 	PaperID int IDENTITY(1,1),
 	Title nvarchar(200),
 	Author nvarchar(30),
+	Body nvarchar(1000),
+	Img nvarchar(50),
 	TypeID int,
 	[Date] date,
 	[Status] bit,
@@ -52,16 +59,28 @@ CREATE TABLE Paper (
 )
 GO
 INSERT INTO Paper
-VALUES (N'Ronaldo bị gay',N'Việt Tùng', 1, '2019-03-24',1),
-(N'Thảm họa HOLYWOOD',N'Tuấn Anh', 2, '2019-03-24',1),
-(N'Đưa món Việt vươn tầm thế giời',N'Đình Duy', 3, '2019-03-24',1),
-(N'Sóng thần tại Đà Nẵng',N'Bá Dương', 4, '2019-03-24',1),
-(N'Sầu riêng lên mặt trăng',N'Chú heo con', 5, '2019-03-24',1),
-(N'Ronaldo lấy chồng',N'Việt Tùng', 1, '2019-03-24',0),
-(N'HOLYWOOD ở đâu',N'Tuấn Anh', 2, '2019-03-24',0),
-(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy', 3, '2019-03-24',0),
-(N'Bão đổ bộ lên miền Bắc',N'Bá Dương', 4, '2019-03-24',0),
-(N'Khám phá phi hành đoàn CS1302',N'Chú heo con', 5,'2019-03-24',0);
+VALUES (N'Ronaldo bị gay',N'Việt Tùng','smt','3.jpg', 1, '2019-03-24',1),
+(N'Thảm họa HOLYWOOD',N'Tuấn Anh','smt','3.jpg', 2, '2019-03-24',1),
+(N'Đưa món Việt vươn tầm thế giời',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',1),
+(N'Sóng thần tại Đà Nẵng',N'Bá Dương','smt','3.jpg', 4, '2019-03-24',1),
+(N'Sầu riêng lên mặt trăng',N'Chú heo con','smt','3.jpg', 5, '2019-03-24',1),
+(N'Ronaldo lấy chồng',N'Việt Tùng','smt','3.jpg', 1, '2019-03-24',0),
+(N'HOLYWOOD ở đâu',N'Tuấn Anh','smt','3.jpg', 2, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
+(N'Bão đổ bộ lên miền Bắc',N'Bá Dương','smt','3.jpg', 4, '2019-03-24',0),
+(N'Khám phá phi hành đoàn CS1302',N'Chú heo con','smt','3.jpg', 5,'2019-03-24',0);
 
 GO
 

@@ -22,7 +22,7 @@ public class PostDAO {
 
     public post select(String idp) throws Exception {
         post pt = new post();
-        String sql = "select * from Paper where PaperID="+idp;
+        String sql = "select * from Paper where PaperID=" + idp;
         try {
             Connection conn = new DBContext().getConnection();
             ResultSet rs = conn.prepareStatement(sql).executeQuery();
@@ -30,10 +30,12 @@ public class PostDAO {
             int id = rs.getInt("PaperID");
             String title = rs.getString("Title");
             String author = rs.getString("Author");
+            String body = rs.getString("Body");
+            String img = rs.getString("Img");
             int typeID = rs.getInt("TypeID");
             Date date = rs.getDate("Date");
             boolean Status = rs.getBoolean("Status");
-            pt = new post(id, title, "smt", "smt", typeID, date, Status, author);
+            pt = new post(id, title, body, img, typeID, date, Status, author);
             rs.close();
             conn.close();
             return pt;
@@ -54,10 +56,12 @@ public class PostDAO {
                 int id = rs.getInt("PaperID");
                 String title = rs.getString("Title");
                 String author = rs.getString("Author");
+                String body = rs.getString("Body");
+                String img = rs.getString("Img");
                 int typeID = rs.getInt("TypeID");
                 Date date = rs.getDate("Date");
                 boolean Status = rs.getBoolean("Status");
-                list.add(new post(id, title, "smt", "3.jpg", typeID, date, Status, author));
+                list.add(new post(id, title, body, img, typeID, date, Status, author));
             }
             rs.close();
             conn.close();
