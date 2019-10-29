@@ -71,4 +71,31 @@ public class PostDAO {
         }
         return list;
     }
+    
+    public List<post> selectTop() throws Exception {
+        post pt = new post();
+        List<post> list = new ArrayList<>();
+        String sql = "select TOP (5) * from Paper ORDER BY Paper.[Date]";
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("PaperID");
+                String title = rs.getString("Title");
+                String author = rs.getString("Author");
+                String body = rs.getString("Body");
+                String img = rs.getString("Img");
+                int typeID = rs.getInt("TypeID");
+                Date date = rs.getDate("Date");
+                boolean Status = rs.getBoolean("Status");
+                list.add(new post(id, title, body, img, typeID, date, Status, author));
+            }
+            rs.close();
+            conn.close();
+            return list;
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.select");
+        }
+        return list;
+    }
 }

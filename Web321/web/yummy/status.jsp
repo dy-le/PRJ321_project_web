@@ -39,7 +39,7 @@
                     <div class="about-me-widget-thumb">
                         <img src="${pageContext.request.contextPath}/media/img/1.jpg" alt="">
                     </div>
-                    <h4 class="font-shadow-into-light">Daemon Lee</h4>
+                        <h4 class="font-shadow-into-light">${param.account}</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                 </div>
 

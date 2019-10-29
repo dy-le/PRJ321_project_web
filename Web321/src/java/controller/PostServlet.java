@@ -41,7 +41,7 @@ public class PostServlet extends HttpServlet {
             post pt = dao.select(id);
 //            response.sendRedirect("yummy/single.jsp");
             request.setAttribute("post", pt);
-            List<post> list = dao.select();
+            List<post> list = dao.selectTop();
             request.setAttribute("listpost", list);
             RequestDispatcher rd = request.getRequestDispatcher("yummy/single.jsp");
             rd.forward(request, response);

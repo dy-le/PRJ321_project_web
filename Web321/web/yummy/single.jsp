@@ -278,7 +278,10 @@
                         </div>
                     </div>
                     <!-- ****** Blog Sidebar ****** -->
-                    <jsp:include page="status.jsp"/>
+                    <jsp:include page="status.jsp" flush="true">
+                        <jsp:param name="account" value="Daemon Lee"/>
+                        <jsp:param name="id" value="18"/>
+                    </jsp:include>
                 </div>
             </div>
         </section>

@@ -206,13 +206,13 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-8">
                         <div class="row">
-
+                            <c:set var="first" value="${listpost[0]}"/>
                             <!-- Single Post -->
                             <div class="col-12">
                                 <div class="single-post">
                                     <!-- Post Thumb -->
                                     <div class="post-thumb">
-                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/duy1.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/${first.img}" alt="">
                                     </div>
                                     <!-- Post Content -->
                                     <div class="post-content">
@@ -220,11 +220,11 @@
                                             <div class="post-author-date-area d-flex">
                                                 <!-- Post Author -->
                                                 <div class="post-author">
-                                                    <a href="#">By Marian</a>
+                                                    <a href="#">By ${first.acc}</a>
                                                 </div>
                                                 <!-- Post Date -->
                                                 <div class="post-date">
-                                                    <a href="#">May 19, 2017</a>
+                                                    <a href="#">${first.date}</a>
                                                 </div>
                                             </div>
                                             <!-- Post Comment & Share Area -->
@@ -244,10 +244,10 @@
                                             </div>
                                         </div>
                                         <a href="#">
-                                            <h2 class="post-headline">Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!</h2>
+                                            <h2 class="post-headline">${first.header}</h2>
                                         </a>
                                         <p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.</p>
-                                        <a href="#" class="read-more">Continue Reading..</a>
+                                        <a href="${pageContext.request.contextPath}/post?idPost=${first.id}" class="read-more">Continue Reading..</a>
                                     </div>
                                 </div>
                             </div>
@@ -295,137 +295,13 @@
                                     </div>
                                 </div>
                             </c:forEach>
-                            <!-- Single Post -->
-                            <div class="col-12 col-md-6">
-                                <div class="single-post wow fadeInUp" data-wow-delay=".6s">
-                                    <!-- Post Thumb -->
-                                    <div class="post-thumb">
-                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/3.jpg" alt="">
-                                    </div>
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <div class="post-meta d-flex">
-                                            <div class="post-author-date-area d-flex">
-                                                <!-- Post Author -->
-                                                <div class="post-author">
-                                                    <a href="#">By Marian</a>
-                                                </div>
-                                                <!-- Post Date -->
-                                                <div class="post-date">
-                                                    <a href="#">May 19, 2017</a>
-                                                </div>
-                                            </div>
-                                            <!-- Post Comment & Share Area -->
-                                            <div class="post-comment-share-area d-flex">
-                                                <!-- Post Favourite -->
-                                                <div class="post-favourite">
-                                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
-                                                </div>
-                                                <!-- Post Comments -->
-                                                <div class="post-comments">
-                                                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
-                                                </div>
-                                                <!-- Post Share -->
-                                                <div class="post-share">
-                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <a href="#">
-                                            <h4 class="post-headline">The Top Breakfast And Brunch Spots In Hove, Brighton</h4>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <!-- Single Post -->
-                            <div class="col-12 col-md-6">
-                                <div class="single-post wow fadeInUp" data-wow-delay=".8s">
-                                    <!-- Post Thumb -->
-                                    <div class="post-thumb">
-                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/4.jpg" alt="">
-                                    </div>
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <div class="post-meta d-flex">
-                                            <div class="post-author-date-area d-flex">
-                                                <!-- Post Author -->
-                                                <div class="post-author">
-                                                    <a href="#">By Marian</a>
-                                                </div>
-                                                <!-- Post Date -->
-                                                <div class="post-date">
-                                                    <a href="#">May 19, 2017</a>
-                                                </div>
-                                            </div>
-                                            <!-- Post Comment & Share Area -->
-                                            <div class="post-comment-share-area d-flex">
-                                                <!-- Post Favourite -->
-                                                <div class="post-favourite">
-                                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
-                                                </div>
-                                                <!-- Post Comments -->
-                                                <div class="post-comments">
-                                                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
-                                                </div>
-                                                <!-- Post Share -->
-                                                <div class="post-share">
-                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <a href="#">
-                                            <h4 class="post-headline">The 10 Best Pubs In The Lake District, Cumbria</h4>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Post -->
-                            <div class="col-12 col-md-6">
-                                <div class="single-post wow fadeInUp" data-wow-delay="1s">
-                                    <!-- Post Thumb -->
-                                    <div class="post-thumb">
-                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/5.jpg" alt="">
-                                    </div>
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <div class="post-meta d-flex">
-                                            <div class="post-author-date-area d-flex">
-                                                <!-- Post Author -->
-                                                <div class="post-author">
-                                                    <a href="#">By Marian</a>
-                                                </div>
-                                                <!-- Post Date -->
-                                                <div class="post-date">
-                                                    <a href="#">May 19, 2017</a>
-                                                </div>
-                                            </div>
-                                            <!-- Post Comment & Share Area -->
-                                            <div class="post-comment-share-area d-flex">
-                                                <!-- Post Favourite -->
-                                                <div class="post-favourite">
-                                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
-                                                </div>
-                                                <!-- Post Comments -->
-                                                <div class="post-comments">
-                                                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
-                                                </div>
-                                                <!-- Post Share -->
-                                                <div class="post-share">
-                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <a href="#">
-                                            <h4 class="post-headline">The 10 Best Brunch Spots In Newcastle, England</h4>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <jsp:include page="status.jsp"/>
+                    <jsp:include page="status.jsp" flush="true">
+                        <jsp:param name="account" value="Daemon Lee"/>
+                        <jsp:param name="id" value="18"/>
+                    </jsp:include>
                 </div>
             </div>
         </div>
