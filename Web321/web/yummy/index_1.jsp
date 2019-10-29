@@ -5,6 +5,7 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -246,7 +247,7 @@
                                         <a href="${pageContext.request.contextPath}/post?idPost=${first.id}">
                                             <h2 class="post-headline">${first.header}</h2>
                                         </a>
-                                        <p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.</p>
+                                        <p>${fn:substring(first.body,0,150)}...</p>
                                         <a href="${pageContext.request.contextPath}/post?idPost=${first.id}" class="read-more">Continue Reading..</a>
                                     </div>
                                 </div>

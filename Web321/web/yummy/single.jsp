@@ -125,27 +125,7 @@
                                         <a href="#">
                                             <h2 class="post-headline">${post.header}</h2>
                                         </a>
-                                        <p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea. Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-
-                                        <blockquote class="yummy-blockquote mt-30 mb-30">
-                                            <h5 class="mb-30">“Technology is nothing. What's important is that you have a faith in people, that they're basically good and smart, and if you give them tools, they'll do wonderful things with them.”</h5>
-                                            <h6 class="text-muted">Steven Jobs</h6>
-                                        </blockquote>
-
-                                        <h4>You Can Buy For Less Than A College Degree</h4>
-                                        <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                                        <h4>You Can Buy For Less Than A College Degree</h4>
-                                        <p>Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-                                        <ul class="mb-30">
-                                            <li>1/3 cup Lonsectetur adipisicing elit.Lorem ipsum</li>
-                                            <li>1/2 cup Veniam, quis nostrud exercitation</li>
-                                            <li>Ut labore et dolore magna</li>
-                                            <li>Lonsectetur adipisicing elit.Lorem ipsum</li>
-                                            <li>Lonsectetur adipisicing elit.Lorem ipsum</li>
-                                            <li>Ut labore et dolore magna</li>
-                                            <li>Lonsectetur adipisicing elit.Lorem ipsum</li>
-                                        </ul>
+                                        ${post.body}
                                     </div>
                                 </div>
 
