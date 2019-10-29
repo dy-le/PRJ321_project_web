@@ -49,6 +49,7 @@ public class RegisterServlet extends HttpServlet {
             throws ServletException, IOException {
 //        processRequest(request, response);
         request.getRequestDispatcher("register.jsp").forward(request, response);
+//        response.sendRedirect(request.getContextPath() + "/register.jsp");
     }
 
     /**
@@ -82,12 +83,10 @@ public class RegisterServlet extends HttpServlet {
                 response.sendRedirect("login");
             } else {
                 request.setAttribute("PassError", "Incorrect Password");
-                RequestDispatcher rs = request.getRequestDispatcher("register.jsp");
-                rs.forward(request, response);
+                doGet(request, response);
             }
         } else {
-            RequestDispatcher rs = request.getRequestDispatcher("register.jsp");
-            rs.forward(request, response);
+            doGet(request, response);
         }
 
     }

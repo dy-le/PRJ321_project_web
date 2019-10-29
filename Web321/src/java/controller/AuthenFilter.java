@@ -155,7 +155,7 @@ public class AuthenFilter implements Filter {
         Throwable problem = null;
         
         try {
-            
+
             HttpServletRequest req = (HttpServletRequest)request;
             HttpServletResponse res = (HttpServletResponse)response;
             HttpSession session = req.getSession();
