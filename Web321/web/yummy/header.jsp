@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +27,7 @@
 
         <!-- Responsive CSS -->
         <link href="${pageContext.request.contextPath}/yummy/css/responsive/responsive.css" rel="stylesheet">
-        
+
     </head>
     <body>
         <!-- ****** Top Header Area Start ****** -->
@@ -47,12 +48,24 @@
                     <div class="col-7 col-sm-6">
                         <div class="signup-search-area d-flex align-items-center justify-content-end">
                             <div class="login_register_area d-flex">
-                                <div class="login">
-                                    <a href="${pageContext.request.contextPath}/login/login.jsp">Sing in</a>
-                                </div>
-                                <div class="register">
-                                    <a href="${pageContext.request.contextPath}/register.jsp">Sing up</a>
-                                </div>
+                                <c:if test="${empty sessionScope.login}">
+                                    <div class="login">
+                                        <a href="${pageContext.request.contextPath}/login">Sign in</a>
+                                    </div>
+                                    <div class="register">
+                                        <a href="${pageContext.request.contextPath}/register">Sign up</a>
+                                    </div>
+                                </c:if>
+                                <c:if test="${not empty sessionScope.login}">
+                                    <div class="login">
+                                        <a href="${pageContext.request.contextPath}/profile"> ${sessionScope.login.name} </a>
+                                    </div>
+                                    <div class="register">
+                                        <a href="${pageContext.request.contextPath}/logout">Sign out</a>
+                                    </div>
+                                </c:if>
+
+
                             </div>
                             <!-- Search Button Area -->
                             <!--                            <div class="search_button">
