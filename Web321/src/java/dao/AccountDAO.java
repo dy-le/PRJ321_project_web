@@ -46,7 +46,7 @@ public class AccountDAO {
 
     public List<Account> select(String accName) throws Exception {
         List<Account> list = new ArrayList<>();
-        String sql = "Select * from Account WHERE Username like " + accName ;
+        String sql = "Select * from Account WHERE Username like " + accName;
         try {
             Connection conn = new DBContext().getConnection();
             ResultSet rs = conn.prepareStatement(sql).executeQuery();
@@ -68,7 +68,7 @@ public class AccountDAO {
         }
         return list;
     }
-    
+
     public List<Account> login(String user, String pwd) {
         List<Account> list = new ArrayList<>();
 
@@ -94,6 +94,36 @@ public class AccountDAO {
             System.out.println(e.getMessage() + " -->  AccountDAO.login");
         }
         return list;
+    }
+
+    public Account getAccount(int id) {
+        try {
+            ResultSet rs = new DBContext().getConnection().createStatement().executeQuery("select * from account where userid='" + id + "'");
+            while (rs.next()) {
+                int age = rs.getInt("age");
+                String name = rs.getString("name");
+                String phone = rs.getString("phone");
+                String email = rs.getString("email");
+                return new Account(age, name, phone, email);
+            }
+            rs.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + " -->  AccountDAO.getAccount");
+        }
+        return null;
+    }
+
+    public void profile(String id, String name, int age, String phone, String email) {
+        String sql = "UPDATE [Account]"
+                + "SET Name = N'" + name + "', Age=" + age + ",Phone='" + phone + "',Email='" + email + "'"
+                + "WHERE UserID ='" + id + "'";
+        try {
+            Connection conn = new DBContext().getConnection();
+            conn.prepareStatement(sql).execute();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + " -->  AccountDAO.profile");
+        }
     }
 
     public void register(String username, String email, String password) {

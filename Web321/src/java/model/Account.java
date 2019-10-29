@@ -10,10 +10,18 @@ package model;
  * @author Tuan Anh
  */
 public class Account {
-    int userID,age;
-    String name,phone,email,userName,password,roleAcc;
+
+    int userID, age;
+    String name, phone, email, userName, password, roleAcc;
 
     public Account() {
+    }
+
+    public Account(int age, String name, String phone, String email) {
+        this.age = age;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
     }
 
     public Account(int userID, int age, String name, String phone, String email, String userName, String password, String roleAcc) {

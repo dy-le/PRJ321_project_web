@@ -5,11 +5,9 @@
  */
 package controller;
 
-import context.DBContext;
 import dao.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -17,13 +15,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.Account;
 
 /**
  *
  * @author Tuan Anh
  */
-public class LoginServlet extends HttpServlet {
+public class ProfileServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,6 +31,7 @@ public class LoginServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -46,8 +44,16 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        response.sendRedirect("login/login.jsp");
-        request.getRequestDispatcher("login/login.jsp").forward(request, response);
+        Cookie [] cookies = request.getCookies();
+        String id = "";
+        for (Cookie cooky : cookies) {
+            if(cooky.getName().equals("id")){
+                id = cooky.getValue();
+            }
+        }
+        HttpSession session = request.getSession();
+        session.setAttribute("account", new AccountDAO().getAccount(Integer.valueOf(id)));
+        request.getRequestDispatcher("profile.jsp").forward(request, response);
     }
 
     /**
@@ -64,33 +70,39 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-        //get value from login.jsp
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        HttpSession session = request.getSession(true);
-
-        if (username != null
-                && password != null) {
-            AccountDAO dao = new AccountDAO();
-            List<Account> acc = dao.login(username, password);
-            System.out.println(acc.size());
-
-            //validate account
-            if (acc.size() == 1) {
-                String role = "user";
-                if (username.equals("admin")) {
-                    role = "admin";
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            HttpSession session = request.getSession();
+            if (request.getParameter("save") != null
+                    && request.getParameter("name") != null) {
+                String name = request.getParameter("name");
+                int age = Integer.valueOf(request.getParameter("age"));
+                String phone = request.getParameter("phone");
+                String email = request.getParameter("email");
+                Cookie[] cookies = request.getCookies();
+                String id = "";
+                for (Cookie cooky : cookies) {
+                    if (cooky.getName().equals("id")) {
+                        id = cooky.getValue();
+                    }
                 }
-                
-                session.setAttribute("login", acc);
-                session.setMaxInactiveInterval(15 * 60);    
-                
-                response.addCookie(new Cookie("id", String.valueOf(acc.get(0).getUserID())));
-                
-                request.getRequestDispatcher("yummy/index_1.jsp").forward(request, response);
-            } else {
-                doGet(request, response);
+                session.setAttribute("email", email);
+                session.setAttribute("name", name);
+                session.setAttribute("age", age);
+                session.setAttribute("phone", phone);
+
+                AccountDAO dao = new AccountDAO();
+                dao.profile(id, name, age, phone, email);
+
             }
+
+            RequestDispatcher rs = request.getRequestDispatcher("profile.jsp");
+            rs.forward(request, response);
+
+//            String change = getServletConfig().getInitParameter("change");
+//            request.setAttribute("change", change);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage() + "  --> ProfileServlet");
         }
     }
 
