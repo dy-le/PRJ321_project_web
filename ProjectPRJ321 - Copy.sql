@@ -50,7 +50,7 @@ CREATE TABLE Paper (
 	PaperID int IDENTITY(1,1),
 	Title nvarchar(200),
 	Author nvarchar(30),
-	Body nvarchar(1000),
+	Body text,
 	Img nvarchar(50),
 	TypeID int,
 	[Date] date,
@@ -59,12 +59,32 @@ CREATE TABLE Paper (
 )
 GO
 INSERT INTO Paper
-VALUES (N'Ronaldo bị gay',N'Việt Tùng','smt','3.jpg', 1, '2019-03-24',1),
+VALUES (N'Ronaldo bị gay',N'Việt Tùng','Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.','3.jpg', 1, '2019-03-24',1),
 (N'Thảm họa HOLYWOOD',N'Tuấn Anh','smt','3.jpg', 2, '2019-03-24',1),
 (N'Đưa món Việt vươn tầm thế giời',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',1),
 (N'Sóng thần tại Đà Nẵng',N'Bá Dương','smt','3.jpg', 4, '2019-03-24',1),
 (N'Sầu riêng lên mặt trăng',N'Chú heo con','smt','3.jpg', 5, '2019-03-24',1),
-(N'Ronaldo lấy chồng',N'Việt Tùng','smt','3.jpg', 1, '2019-03-24',0),
+(N'Ronaldo lấy chồng',N'Việt Tùng','<p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea. Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+                                        <blockquote class="yummy-blockquote mt-30 mb-30">
+                                            <h5 class="mb-30">“Technology is nothing. What"s important is that you have a faith in people, that they"re basically good and smart, and if you give them tools, they"ll do wonderful things with them.”</h5>
+                                            <h6 class="text-muted">Steven Jobs</h6>
+                                        </blockquote>
+
+                                        <h4>You Can Buy For Less Than A College Degree</h4>
+                                        <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                                        <h4>You Can Buy For Less Than A College Degree</h4>
+                                        <p>Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+                                        <ul class="mb-30">
+                                            <li>1/3 cup Lonsectetur adipisicing elit.Lorem ipsum</li>
+                                            <li>1/2 cup Veniam, quis nostrud exercitation</li>
+                                            <li>Ut labore et dolore magna</li>
+                                            <li>Lonsectetur adipisicing elit.Lorem ipsum</li>
+                                            <li>Lonsectetur adipisicing elit.Lorem ipsum</li>
+                                            <li>Ut labore et dolore magna</li>
+                                            <li>Lonsectetur adipisicing elit.Lorem ipsum</li>
+                                        </ul>','3.jpg', 1, '2019-03-24',0),
 (N'HOLYWOOD ở đâu',N'Tuấn Anh','smt','3.jpg', 2, '2019-03-24',0),
 (N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
 (N'Đưa món Việt - phở bò lên thế giới',N'Đình Duy','smt','duy1.jpg', 3, '2019-03-24',0),
