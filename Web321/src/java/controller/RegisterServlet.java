@@ -31,43 +31,10 @@ public class RegisterServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
-        try (PrintWriter out = response.getWriter()) {
-            if (request.getParameter("username") != null
-                    && request.getParameter("email") != null
-                    && request.getParameter("password1") != null
-                    && request.getParameter("password2") != null
-                    && request.getParameter("register") != null) {
-                String username = request.getParameter("username");
-                System.out.println(username);
-                String email = request.getParameter("email");
-                System.out.println(email);
-                String password1 = request.getParameter("password1");
-                System.out.println(password1);
-                String password2 = request.getParameter("password2");
-                System.out.println(password2);
-
-                if (password1.equals(password2)) {
-                    AccountDAO dao = new AccountDAO();
-                    dao.register(username, email, password1);
-                    response.sendRedirect("login");
-                }
-            } else {
-                RequestDispatcher rs = request.getRequestDispatcher("Register/register.jsp");
-                rs.forward(request, response);
-            }
-
-        } catch (Exception ex) {
-            RequestDispatcher rs = request.getRequestDispatcher("Register/register.jsp");
-            rs.forward(request, response);
-            System.out.println(ex.getMessage() + "  --> ResgisterServlet");
-        }
-    }
-
+//    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+//            throws ServletException, IOException {
+//        
+//    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -80,7 +47,8 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        request.getRequestDispatcher("register.jsp").forward(request, response);
     }
 
     /**
@@ -94,9 +62,34 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-        RequestDispatcher rs = request.getRequestDispatcher("register");
-        rs.forward(request, response);
+//        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String password1 = request.getParameter("password1");
+        String password2 = request.getParameter("password2");
+        if (username != null
+                && email != null
+                && password1 != null
+                && password2 != null) {
+
+            if (password1.equals(password2)) {
+                request.setAttribute("PassError", null);
+                AccountDAO dao = new AccountDAO();
+                dao.register(username, email, password1);
+                response.sendRedirect("login");
+            } else {
+                request.setAttribute("PassError", "Incorrect Password");
+                RequestDispatcher rs = request.getRequestDispatcher("register.jsp");
+                rs.forward(request, response);
+            }
+        } else {
+            RequestDispatcher rs = request.getRequestDispatcher("register.jsp");
+            rs.forward(request, response);
+        }
+
     }
 
     /**
