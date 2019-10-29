@@ -20,9 +20,9 @@ import model.post;
  */
 public class PostDAO {
 
-    public post select(int idp) throws Exception {
+    public post select(String idp) throws Exception {
         post pt = new post();
-        String sql = "select * from Paper where PaperID=1";
+        String sql = "select * from Paper where PaperID="+idp;
         try {
             Connection conn = new DBContext().getConnection();
             ResultSet rs = conn.prepareStatement(sql).executeQuery();
@@ -57,7 +57,7 @@ public class PostDAO {
                 int typeID = rs.getInt("TypeID");
                 Date date = rs.getDate("Date");
                 boolean Status = rs.getBoolean("Status");
-                list.add(new post(id, title, "smt", "smt", typeID, date, Status, author));
+                list.add(new post(id, title, "smt", "3.jpg", typeID, date, Status, author));
             }
             rs.close();
             conn.close();

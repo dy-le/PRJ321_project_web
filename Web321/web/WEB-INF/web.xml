@@ -16,6 +16,10 @@
         <servlet-name>post</servlet-name>
         <servlet-class>controller.PostServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ArchiveController</servlet-name>
+        <servlet-class>controller.ArchiveController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>post</servlet-name>
         <url-pattern>/post</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ArchiveController</servlet-name>
+        <url-pattern>/archive</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

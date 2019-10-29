@@ -257,7 +257,7 @@
                                     <div class="single-post wow fadeInUp" data-wow-delay=".4s">
                                         <!-- Post Thumb -->
                                         <div class="post-thumb">
-                                            <img src="${pageContext.request.contextPath}/yummy/img/blog-img/2.jpg" alt="">
+                                            <img src="${pageContext.request.contextPath}/yummy/img/blog-img/${post.img}" alt="">
                                         </div>
                                         <!-- Post Content -->
                                         <div class="post-content">
@@ -288,7 +288,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="#">
+                                            <a href="${pageContext.request.contextPath}/post?idPost=${post.id}">
                                                 <h4 class="post-headline">${post.header}</h4>
                                             </a>
                                         </div>
