@@ -5,6 +5,7 @@
  */
 package model;
 
+import dao.AccountDAO;
 import java.util.Date;
 
 /**
@@ -16,32 +17,40 @@ public class post {
     String header;
     String body;
     String img;
+    
     int like;
-    String type;
-    Account acc;
+    
+    String acc;
+    int typeId;
     Date date;
-
+    boolean status;
+    
     public post() {
     }
 
-    public post(int id, String header, String body, String img, int like, String type, Account acc, Date date) {
+    public post(int id, String header, String body, String img, int typeId, Date date, boolean status ,String accName) throws Exception {
         this.id = id;
         this.header = header;
         this.body = body;
         this.img = img;
-        this.like = like;
-        this.type = type;
-        this.acc = acc;
+        this.typeId = typeId;
         this.date = date;
+        this.status = status;
+//        this.acc = (Account)new AccountDAO().select(accName);
+        this.acc = accName;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
+//    public post(int id, String header, String body, String img, int like, Account acc, int typeId, Date date, boolean status) {
+//        this.id = id;
+//        this.header = header;
+//        this.body = body;
+//        this.img = img;
+//        this.like = like;
+//        this.acc = acc;
+//        this.typeId = typeId;
+//        this.date = date;
+//        this.status = status;
+//    }
 
     public int getId() {
         return id;
@@ -83,22 +92,42 @@ public class post {
         this.like = like;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Account getAcc() {
+    public String getAcc() {
         return acc;
     }
 
-    public void setAcc(Account acc) {
+    public void setAcc(String acc) {
         this.acc = acc;
     }
+
+    public int getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(int typeId) {
+        this.typeId = typeId;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "post{" + "id=" + id + ", header=" + header + ", body=" + body + ", img=" + img + ", like=" + like + ", acc=" + acc + ", typeId=" + typeId + ", date=" + date + ", status=" + status + '}';
+    }
+
     
-    
-    
-}
+}    

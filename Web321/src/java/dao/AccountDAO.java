@@ -44,6 +44,31 @@ public class AccountDAO {
         return list;
     }
 
+    public List<Account> select(String accName) throws Exception {
+        List<Account> list = new ArrayList<>();
+        String sql = "Select * from Account WHERE Username like " + accName ;
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("userID");
+                int age = rs.getInt("age");
+                String name = rs.getString("name");
+                String phone = rs.getString("phone");
+                String email = rs.getString("email");
+                String userName = rs.getString("userName");
+                String password = rs.getString("password");
+                String roleAcc = rs.getString("roleAcc");
+                list.add(new Account(id, age, name, phone, email, userName, password, roleAcc));
+            }
+            rs.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> accountDAO.select");
+        }
+        return list;
+    }
+    
     public List<Account> login(String user, String pwd) {
         List<Account> list = new ArrayList<>();
 

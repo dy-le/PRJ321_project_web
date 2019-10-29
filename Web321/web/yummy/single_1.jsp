@@ -20,26 +20,27 @@
         <title>Yummy Blog - Food Blog Template</title>
 
         <!-- Favicon -->
-        <link rel="icon" href="${pageContext.request.contextPath}/yummy/img/core-img/favicon.ico">
+        <link rel="icon" href="img/core-img/favicon.ico">
 
         <!-- Core Stylesheet -->
-        <link href="${pageContext.request.contextPath}/yummy/style.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
 
         <!-- Responsive CSS -->
-        <link href="${pageContext.request.contextPath}/yummy/css/responsive/responsive.css" rel="stylesheet">
+        <link href="css/responsive/responsive.css" rel="stylesheet">
+
     </head>
 
     <body>
         <!-- Preloader Start -->
-<!--        <div id="preloader">
+        <div id="preloader">
             <div class="yummy-load"></div>
-        </div>-->
+        </div>
 
 
         <jsp:include page="header.jsp"/>
 
         <!-- ****** Breadcumb Area Start ****** -->
-        <div class="breadcumb-area" style="background-image: url(${pageContext.request.contextPath}/yummy/img/bg-img/breadcumb.jpg);">
+        <div class="breadcumb-area" style="background-image: url(img/bg-img/breadcumb.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -90,7 +91,7 @@
                                 <div class="single-post">
                                     <!-- Post Thumb -->
                                     <div class="post-thumb">
-                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/10.jpg" alt="">
+                                        <img src="img/blog-img/10.jpg" alt="">
                                     </div>
                                     <!-- Post Content -->
                                     <div class="post-content">
@@ -98,11 +99,11 @@
                                             <div class="post-author-date-area d-flex">
                                                 <!-- Post Author -->
                                                 <div class="post-author">
-                                                    <a href="#">By  ${post.acc}</a>
+                                                    <a href="#">By Marian</a>
                                                 </div>
                                                 <!-- Post Date -->
                                                 <div class="post-date">
-                                                    <a href="#">${post.date}</a>
+                                                    <a href="#">May 19, 2017</a>
                                                 </div>
                                             </div>
                                             <!-- Post Comment & Share Area -->
@@ -122,7 +123,7 @@
                                             </div>
                                         </div>
                                         <a href="#">
-                                            <h2 class="post-headline">${post.header}</h2>
+                                            <h2 class="post-headline">Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!</h2>
                                         </a>
                                         <p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea. Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 
@@ -133,6 +134,14 @@
 
                                         <h4>You Can Buy For Less Than A College Degree</h4>
                                         <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+
+                                        <img class="br-30 mb-30" src="img/blog-img/11.jpg" alt="">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+
+                                        <img class="br-30 mb-30" src="img/blog-img/12.jpg" alt="">
+                                        <p>Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                                        <img class="br-30 mb-30" src="img/blog-img/13.jpg" alt="">
                                         <h4>You Can Buy For Less Than A College Degree</h4>
                                         <p>Liusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qui s nostrud exercitation ullamLorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaLorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
@@ -145,6 +154,8 @@
                                             <li>Ut labore et dolore magna</li>
                                             <li>Lonsectetur adipisicing elit.Lorem ipsum</li>
                                         </ul>
+
+                                        <img class="br-30 mb-15" src="img/blog-img/14.jpg" alt="">
                                     </div>
                                 </div>
 
@@ -152,7 +163,7 @@
                                 <div class="tags-area">
                                     <a href="#">Multipurpose</a>
                                     <a href="#">Design</a>
-                                    <a href="#">${post.typeId}</a>
+                                    <a href="#">Ideas</a>
                                 </div>
 
                                 <!-- Related Post Area -->
@@ -164,7 +175,7 @@
                                         <div class="single-post">
                                             <!-- Post Thumb -->
                                             <div class="post-thumb">
-                                                <img src="${pageContext.request.contextPath}/yummy/img/blog-img/15.jpg" alt="">
+                                                <img src="img/blog-img/15.jpg" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -189,7 +200,7 @@
                                         <div class="single-post">
                                             <!-- Post Thumb -->
                                             <div class="post-thumb">
-                                                <img src="${pageContext.request.contextPath}/yummy/img/blog-img/5.jpg" alt="">
+                                                <img src="img/blog-img/5.jpg" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -214,7 +225,7 @@
                                         <div class="single-post">
                                             <!-- Post Thumb -->
                                             <div class="post-thumb">
-                                                <img src="${pageContext.request.contextPath}/yummy/img/blog-img/16.jpg" alt="">
+                                                <img src="img/blog-img/16.jpg" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -239,7 +250,7 @@
                                         <div class="single-post">
                                             <!-- Post Thumb -->
                                             <div class="post-thumb">
-                                                <img src="${pageContext.request.contextPath}/yummy/img/blog-img/5.jpg" alt="">
+                                                <img src="img/blog-img/5.jpg" alt="">
                                             </div>
                                             <!-- Post Content -->
                                             <div class="post-content">
@@ -273,7 +284,7 @@
                                             <div class="comment-wrapper d-flex">
                                                 <!-- Comment Meta -->
                                                 <div class="comment-author">
-                                                    <img src="${pageContext.request.contextPath}/yummy/img/blog-img/17.jpg" alt="">
+                                                    <img src="img/blog-img/17.jpg" alt="">
                                                 </div>
                                                 <!-- Comment Content -->
                                                 <div class="comment-content">
@@ -289,7 +300,7 @@
                                                     <div class="comment-wrapper d-flex">
                                                         <!-- Comment Meta -->
                                                         <div class="comment-author">
-                                                            <img src="${pageContext.request.contextPath}/yummy/img/blog-img/18.jpg" alt="">
+                                                            <img src="img/blog-img/18.jpg" alt="">
                                                         </div>
                                                         <!-- Comment Content -->
                                                         <div class="comment-content">
@@ -307,7 +318,7 @@
                                             <div class="comment-wrapper d-flex">
                                                 <!-- Comment Meta -->
                                                 <div class="comment-author">
-                                                    <img src="${pageContext.request.contextPath}/yummy/img/blog-img/19.jpg" alt="">
+                                                    <img src="img/blog-img/19.jpg" alt="">
                                                 </div>
                                                 <!-- Comment Content -->
                                                 <div class="comment-content">
@@ -359,15 +370,15 @@
         <jsp:include page="footer.html"/>
 
         <!-- Jquery-2.2.4 js -->
-        <script src="${pageContext.request.contextPath}/yummy/js/jquery/jquery-2.2.4.min.js"></script>
+        <script src="js/jquery/jquery-2.2.4.min.js"></script>
         <!-- Popper js -->
-        <script src="${pageContext.request.contextPath}/yummy/js/bootstrap/popper.min.js"></script>
+        <script src="js/bootstrap/popper.min.js"></script>
         <!-- Bootstrap-4 js -->
-        <script src="${pageContext.request.contextPath}/yummy/js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js"></script>
         <!-- All Plugins JS -->
-        <script src="${pageContext.request.contextPath}/yummy/js/others/plugins.js"></script>
+        <script src="js/others/plugins.js"></script>
         <!-- Active JS -->
-        <script src="${pageContext.request.contextPath}/yummy/js/active.js"></script>
+        <script src="js/active.js"></script>
     </body>
 
 </html>

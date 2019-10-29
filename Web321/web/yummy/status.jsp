@@ -18,13 +18,13 @@
         <title>Yummy Blog - Food Blog Template</title>
 
         <!-- Favicon -->
-        <link rel="icon" href="img/core-img/favicon.ico">
+        <link rel="icon" href="${pageContext.request.contextPath}/yummy/img/core-img/favicon.ico">
 
         <!-- Core Stylesheet -->
-        <link href="style.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/yummy/style.css" rel="stylesheet">
 
         <!-- Responsive CSS -->
-        <link href="css/responsive/responsive.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/yummy/css/responsive/responsive.css" rel="stylesheet">
 
     </head>
     <body>
@@ -37,9 +37,9 @@
                         <h6>About Me</h6>
                     </div>
                     <div class="about-me-widget-thumb">
-                        <img src="img/about-img/1.jpg" alt="">
+                        <img src="${pageContext.request.contextPath}/media/img/1.jpg" alt="">
                     </div>
-                    <h4 class="font-shadow-into-light">Shopia Bernard</h4>
+                    <h4 class="font-shadow-into-light">Daemon Lee</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                 </div>
 
@@ -65,7 +65,7 @@
                     </div>
                     <!-- Single Popular Post -->
                     <div class="single-populer-post d-flex">
-                        <img src="img/sidebar-img/1.jpg" alt="">
+                        <img src="${pageContext.request.contextPath}/yummy/img/sidebar-img/1.jpg" alt="">
                         <div class="post-content">
                             <a href="#">
                                 <h6>Top Wineries To Visit In England</h6>
@@ -75,7 +75,7 @@
                     </div>
                     <!-- Single Popular Post -->
                     <div class="single-populer-post d-flex">
-                        <img src="img/sidebar-img/2.jpg" alt="">
+                        <img src="${pageContext.request.contextPath}/yummy/img/sidebar-img/2.jpg" alt="">
                         <div class="post-content">
                             <a href="#">
                                 <h6>The 8 Best Gastro Pubs In Bath</h6>
@@ -85,7 +85,7 @@
                     </div>
                     <!-- Single Popular Post -->
                     <div class="single-populer-post d-flex">
-                        <img src="img/sidebar-img/3.jpg" alt="">
+                        <img src="${pageContext.request.contextPath}/yummy/img/sidebar-img/3.jpg" alt="">
                         <div class="post-content">
                             <a href="#">
                                 <h6>Zermatt Unplugged the best festival</h6>
@@ -95,7 +95,7 @@
                     </div>
                     <!-- Single Popular Post -->
                     <div class="single-populer-post d-flex">
-                        <img src="img/sidebar-img/4.jpg" alt="">
+                        <img src="${pageContext.request.contextPath}/yummy/img/sidebar-img/4.jpg" alt="">
                         <div class="post-content">
                             <a href="#">
                                 <h6>Harrogate's Top 10 Independent Eats</h6>
@@ -105,7 +105,7 @@
                     </div>
                     <!-- Single Popular Post -->
                     <div class="single-populer-post d-flex">
-                        <img src="img/sidebar-img/5.jpg" alt="">
+                        <img src="${pageContext.request.contextPath}/yummy/img/sidebar-img/5.jpg" alt="">
                         <div class="post-content">
                             <a href="#">
                                 <h6>Eating Out On A Budget In Oxford</h6>
@@ -118,7 +118,7 @@
                 <!-- Single Widget Area -->
                 <div class="single-widget-area add-widget text-center">
                     <div class="add-widget-area">
-                        <img src="img/sidebar-img/6.jpg" alt="">
+                        <img src="${pageContext.request.contextPath}/yummy/img/sidebar-img/6.jpg" alt="">
                         <div class="add-text">
                             <div class="yummy-table">
                                 <div class="yummy-table-cell">

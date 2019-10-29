@@ -19,13 +19,13 @@
 
         <!-- Favicon -->
         <!--<link rel="icon" href="img/core-img/favicon.ico">-->
-        <link rel="icon" href="../media/LOGO.png">
+        <link rel="icon" href="${pageContext.request.contextPath}/media/LOGO.png">
 
         <!-- Core Stylesheet -->
-        <link href="style.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/yummy/style.css" rel="stylesheet">
 
         <!-- Responsive CSS -->
-        <link href="css/responsive/responsive.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/yummy/css/responsive/responsive.css" rel="stylesheet">
         
     </head>
     <body>
@@ -48,7 +48,7 @@
                         <div class="signup-search-area d-flex align-items-center justify-content-end">
                             <div class="login_register_area d-flex">
                                 <div class="login">
-                                    <a href="register.html">Sing in</a>
+                                    <a href="${pageContext.request.contextPath}/login/login.jsp">Sing in</a>
                                 </div>
                                 <div class="register">
                                     <a href="register.html">Sing up</a>
@@ -93,7 +93,7 @@
                             <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
                                 <ul class="navbar-nav" id="yummy-nav">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="${pageContext.request.contextPath}/home">Home <span class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="yummyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>

@@ -21,13 +21,13 @@
 
         <!-- Favicon -->
         <!--<link rel="icon" href="img/core-img/favicon.ico">-->
-        <link rel="icon" href="../media/LOGO.png">
+        <link rel="icon" href="${pageContext.request.contextPath}/media/LOGO.png">
 
         <!-- Core Stylesheet -->
-        <link href="style.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/yummy/style.css" rel="stylesheet">
 
         <!-- Responsive CSS -->
-        <link href="css/responsive/responsive.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/yummy/css/responsive/responsive.css" rel="stylesheet">
 
     </head>
 
@@ -43,7 +43,7 @@
             <!-- Single Slide -->
             <div class="welcome-single-slide">
                 <!-- Post Thumb -->
-                <img src="img/bg-img/slide-1.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-1.jpg" alt="">
                 <!-- Overlay Text -->
                 <div class="project_title">
                     <div class="post-date-commnents d-flex">
@@ -59,7 +59,7 @@
             <!-- Single Slide -->
             <div class="welcome-single-slide">
                 <!-- Post Thumb -->
-                <img src="img/bg-img/slide-2.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-2.jpg" alt="">
                 <!-- Overlay Text -->
                 <div class="project_title">
                     <div class="post-date-commnents d-flex">
@@ -75,7 +75,7 @@
             <!-- Single Slide -->
             <div class="welcome-single-slide">
                 <!-- Post Thumb -->
-                <img src="img/bg-img/slide-1.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-1.jpg" alt="">
                 <!-- Overlay Text -->
                 <div class="project_title">
                     <div class="post-date-commnents d-flex">
@@ -91,7 +91,7 @@
             <!-- Single Slide -->
             <div class="welcome-single-slide">
                 <!-- Post Thumb -->
-                <img src="img/bg-img/slide-3.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-3.jpg" alt="">
                 <!-- Overlay Text -->
                 <div class="project_title">
                     <div class="post-date-commnents d-flex">
@@ -107,7 +107,7 @@
             <!-- Single Slide -->
             <div class="welcome-single-slide">
                 <!-- Post Thumb -->
-                <img src="img/bg-img/slide-4.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-4.jpg" alt="">
                 <!-- Overlay Text -->
                 <div class="project_title">
                     <div class="post-date-commnents d-flex">
@@ -123,7 +123,7 @@
                 <!-- Single Slide -->
                 <div class="welcome-single-slide">
                     <!-- Post Thumb -->
-                    <img src="img/bg-img/slide-4.jpg" alt="">
+                    <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-4.jpg" alt="">
                     <!-- Overlay Text -->
                     <div class="project_title">
                         <div class="post-date-commnents d-flex">
@@ -147,7 +147,7 @@
                 <div class="row">
                     <div class="col-12 col-md-4 col-lg-2">
                         <div class="single_catagory">
-                            <img src="img/catagory-img/1.jpg" alt="">
+                            <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/1.jpg" alt="">
                             <div class="catagory-title">
                                 <a href="#">
                                     <h5>News</h5>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="col-12 col-md-4 col-lg-2">
                         <div class="single_catagory">
-                            <img src="img/catagory-img/2.jpg" alt="">
+                            <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/2.jpg" alt="">
                             <div class="catagory-title">
                                 <a href="#">
                                     <h5>sport</h5>
@@ -167,7 +167,7 @@
                     </div>
                     <div class="col-12 col-md-4 col-lg-2">
                         <div class="single_catagory">
-                            <img src="img/catagory-img/3.jpg" alt="">
+                            <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/3.jpg" alt="">
                             <div class="catagory-title">
                                 <a href="#">
                                     <h5>fashion</h5>
@@ -177,7 +177,7 @@
                     </div>
                     <div class="col-12 col-md-4 col-lg-2">
                         <div class="single_catagory">
-                            <img src="img/catagory-img/1.jpg" alt="">
+                            <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/1.jpg" alt="">
                             <div class="catagory-title">
                                 <a href="#">
                                     <h5>Food</h5>
@@ -187,7 +187,7 @@
                     </div>
                     <div class="col-12 col-md-4 col-lg-2">
                         <div class="single_catagory">
-                            <img src="img/catagory-img/2.jpg" alt="">
+                            <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/2.jpg" alt="">
                             <div class="catagory-title">
                                 <a href="#">
                                     <h5>Others</h5>
@@ -212,7 +212,7 @@
                                 <div class="single-post">
                                     <!-- Post Thumb -->
                                     <div class="post-thumb">
-                                        <img src="img/blog-img/duy1.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/duy1.jpg" alt="">
                                     </div>
                                     <!-- Post Content -->
                                     <div class="post-content">
@@ -251,56 +251,56 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Single Post -->
-                            <div class="col-12 col-md-6">
-                                <div class="single-post wow fadeInUp" data-wow-delay=".4s">
-                                    <!-- Post Thumb -->
-                                    <div class="post-thumb">
-                                        <img src="img/blog-img/2.jpg" alt="">
-                                    </div>
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <div class="post-meta d-flex">
-                                            <div class="post-author-date-area d-flex">
-                                                <!-- Post Author -->
-                                                <div class="post-author">
-                                                    <a href="#">By Marian</a>
-                                                </div>
-                                                <!-- Post Date -->
-                                                <div class="post-date">
-                                                    <a href="#">May 19, 2017</a>
-                                                </div>
-                                            </div>
-                                            <!-- Post Comment & Share Area -->
-                                            <div class="post-comment-share-area d-flex">
-                                                <!-- Post Favourite -->
-                                                <div class="post-favourite">
-                                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
-                                                </div>
-                                                <!-- Post Comments -->
-                                                <div class="post-comments">
-                                                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
-                                                </div>
-                                                <!-- Post Share -->
-                                                <div class="post-share">
-                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                                </div>
-                                            </div>
+                            <c:forEach var="post" items="${listpost}">
+                                <!-- Single Post -->
+                                <div class="col-12 col-md-6">
+                                    <div class="single-post wow fadeInUp" data-wow-delay=".4s">
+                                        <!-- Post Thumb -->
+                                        <div class="post-thumb">
+                                            <img src="${pageContext.request.contextPath}/yummy/img/blog-img/2.jpg" alt="">
                                         </div>
-                                        <a href="#">
-                                            <h4 class="post-headline">Where To Get The Best Sunday Roast In The Cotswolds</h4>
-                                        </a>
+                                        <!-- Post Content -->
+                                        <div class="post-content">
+                                            <div class="post-meta d-flex">
+                                                <div class="post-author-date-area d-flex">
+                                                    <!-- Post Author -->
+                                                    <div class="post-author">
+                                                        <a href="#">By ${post.acc}</a>
+                                                    </div>
+                                                    <!-- Post Date -->
+                                                    <div class="post-date">
+                                                        <a href="#">${post.date}</a>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Comment & Share Area -->
+                                                <div class="post-comment-share-area d-flex">
+                                                    <!-- Post Favourite -->
+                                                    <div class="post-favourite">
+                                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
+                                                    </div>
+                                                    <!-- Post Comments -->
+                                                    <div class="post-comments">
+                                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                                    </div>
+                                                    <!-- Post Share -->
+                                                    <div class="post-share">
+                                                        <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="#">
+                                                <h4 class="post-headline">${post.header}</h4>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
+                            </c:forEach>
                             <!-- Single Post -->
                             <div class="col-12 col-md-6">
                                 <div class="single-post wow fadeInUp" data-wow-delay=".6s">
                                     <!-- Post Thumb -->
                                     <div class="post-thumb">
-                                        <img src="img/blog-img/3.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/3.jpg" alt="">
                                     </div>
                                     <!-- Post Content -->
                                     <div class="post-content">
@@ -343,7 +343,7 @@
                                 <div class="single-post wow fadeInUp" data-wow-delay=".8s">
                                     <!-- Post Thumb -->
                                     <div class="post-thumb">
-                                        <img src="img/blog-img/4.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/4.jpg" alt="">
                                     </div>
                                     <!-- Post Content -->
                                     <div class="post-content">
@@ -386,7 +386,7 @@
                                 <div class="single-post wow fadeInUp" data-wow-delay="1s">
                                     <!-- Post Thumb -->
                                     <div class="post-thumb">
-                                        <img src="img/blog-img/5.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/5.jpg" alt="">
                                     </div>
                                     <!-- Post Content -->
                                     <div class="post-content">
@@ -425,87 +425,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- ****** Blog Sidebar ****** -->
-                    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-                        <div class="blog-sidebar mt-5 mt-lg-0">
-                            <!-- Single Widget Area -->
-                            <div class="single-widget-area about-me-widget text-center">
-                                <div class="widget-title">
-                                    <h6>About Me</h6>
-                                </div>
-                                <div class="about-me-widget-thumb">
-                                    <img src="img/about-img/1.jpg" alt="">
-                                </div>
-                                <h4 class="font-shadow-into-light">Daemon Lee</h4>
-                                <p>something stupid right here</p>
-                            </div>
-
-                            <!-- Single Widget Area -->
-                            <div class="single-widget-area subscribe_widget text-center">
-                                <div class="widget-title">
-                                    <h6>Subscribe &amp; Follow</h6>
-                                </div>
-                                <div class="subscribe-link">
-                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-
-                            <!-- Single Widget Area -->
-                            <div class="single-widget-area popular-post-widget">
-                                <div class="widget-title text-center">
-                                    <h6>Populer Post</h6>
-                                </div>
-                                <c:forEach var="i" begin="1" end="5">
-                                    <!-- Single Popular Post -->
-                                    <div class="single-populer-post d-flex">
-                                        <img src="img/sidebar-img/5.jpg" alt="">
-                                        <div class="post-content">
-                                            <a href="#">
-                                                <h6>Eating Out On A Budget In Oxford</h6>
-                                            </a>
-                                            <p>Tuesday, October 3, 2017</p>
-                                        </div>
-                                    </div>
-                                </c:forEach>
-                            </div>
-
-                            <!-- Single Widget Area -->
-                            <div class="single-widget-area add-widget text-center">
-                                <div class="add-widget-area">
-                                    <img src="img/sidebar-img/6.jpg" alt="">
-                                    <div class="add-text">
-                                        <div class="yummy-table">
-                                            <div class="yummy-table-cell">
-                                                <h2>Cooking Book</h2>
-                                                <p>Buy Book Online Now!</p>
-                                                <a href="#" class="add-btn">Buy Now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Widget Area -->
-                            <div class="single-widget-area newsletter-widget">
-                                <div class="widget-title text-center">
-                                    <h6>Newsletter</h6>
-                                </div>
-                                <p>Subscribe our newsletter gor get notification about new updates, information discount, etc.</p>
-                                <div class="newsletter-form">
-                                    <form action="#" method="post">
-                                        <input type="email" name="newsletter-email" id="email" placeholder="Your email">
-                                        <button type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <jsp:include page="status.jsp"/>
                 </div>
             </div>
         </div>
@@ -517,7 +437,7 @@
             <!-- Instagram Item -->
             <div class="instagram_gallery_item">
                 <!-- Instagram Thumb -->
-                <img src="img/instagram-img/1.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/instagram-img/1.jpg" alt="">
                 <!-- Hover -->
                 <div class="hover_overlay">
                     <div class="yummy-table">
@@ -533,7 +453,7 @@
             <!-- Instagram Item -->
             <div class="instagram_gallery_item">
                 <!-- Instagram Thumb -->
-                <img src="img/instagram-img/2.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/instagram-img/2.jpg" alt="">
                 <!-- Hover -->
                 <div class="hover_overlay">
                     <div class="yummy-table">
@@ -549,7 +469,7 @@
             <!-- Instagram Item -->
             <div class="instagram_gallery_item">
                 <!-- Instagram Thumb -->
-                <img src="img/instagram-img/3.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/instagram-img/3.jpg" alt="">
                 <!-- Hover -->
                 <div class="hover_overlay">
                     <div class="yummy-table">
@@ -565,7 +485,7 @@
             <!-- Instagram Item -->
             <div class="instagram_gallery_item">
                 <!-- Instagram Thumb -->
-                <img src="img/instagram-img/4.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/instagram-img/4.jpg" alt="">
                 <!-- Hover -->
                 <div class="hover_overlay">
                     <div class="yummy-table">
@@ -581,7 +501,7 @@
             <!-- Instagram Item -->
             <div class="instagram_gallery_item">
                 <!-- Instagram Thumb -->
-                <img src="img/instagram-img/5.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/instagram-img/5.jpg" alt="">
                 <!-- Hover -->
                 <div class="hover_overlay">
                     <div class="yummy-table">
@@ -597,7 +517,7 @@
             <!-- Instagram Item -->
             <div class="instagram_gallery_item">
                 <!-- Instagram Thumb -->
-                <img src="img/instagram-img/6.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/instagram-img/6.jpg" alt="">
                 <!-- Hover -->
                 <div class="hover_overlay">
                     <div class="yummy-table">
@@ -613,7 +533,7 @@
             <!-- Instagram Item -->
             <div class="instagram_gallery_item">
                 <!-- Instagram Thumb -->
-                <img src="img/instagram-img/1.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/instagram-img/1.jpg" alt="">
                 <!-- Hover -->
                 <div class="hover_overlay">
                     <div class="yummy-table">
@@ -629,7 +549,7 @@
             <!-- Instagram Item -->
             <div class="instagram_gallery_item">
                 <!-- Instagram Thumb -->
-                <img src="img/instagram-img/7.jpg" alt="">
+                <img src="${pageContext.request.contextPath}/yummy/img/instagram-img/7.jpg" alt="">
                 <!-- Hover -->
                 <div class="hover_overlay">
                     <div class="yummy-table">
@@ -645,104 +565,16 @@
         </div>
         <!-- ****** Our Creative Portfolio Area End ****** -->
 
-        <!-- ****** Footer Social Icon Area Start ****** -->
-        <div class="social_icon_area clearfix">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="footer-social-area d-flex">
-                            <div class="single-icon">
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i><span>facebook</span></a>
-                            </div>
-                            <div class="single-icon">
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a>
-                            </div>
-                            <div class="single-icon">
-                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i><span>GOOGLE+</span></a>
-                            </div>
-                            <div class="single-icon">
-                                <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i><span>linkedin</span></a>
-                            </div>
-                            <div class="single-icon">
-                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
-                            </div>
-                            <div class="single-icon">
-                                <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i><span>VIMEO</span></a>
-                            </div>
-                            <div class="single-icon">
-                                <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i><span>YOUTUBE</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ****** Footer Social Icon Area End ****** -->
-
-        <!-- ****** Footer Menu Area Start ****** -->
-        <footer class="footer_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="footer-content">
-                            <!-- Logo Area Start -->
-                            <div class="footer-logo-area text-center">
-                                <a href="index.html" class="yummy-logo">Yummy Blog</a>
-                            </div>
-                            <!-- Menu Area Start -->
-                            <nav class="navbar navbar-expand-lg">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-footer-nav" aria-controls="yummyfood-footer-nav" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
-                                <!-- Menu Area Start -->
-                                <div class="collapse navbar-collapse justify-content-center" id="yummyfood-footer-nav">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item active">
-                                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Features</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Categories</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Archive</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">About</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Contact</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Copywrite Text -->
-                        <div class="copy_right_text text-center">
-                            <p>Copyright @2018 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- ****** Footer Menu Area End ****** -->
+        <jsp:include page="footer.html"/>
 
         <!--Jquery-2.2.4 js--> 
-        <script src="js/jquery/jquery-2.2.4.min.js"></script>
+        <script src="${pageContext.request.contextPath}/yummy/js/jquery/jquery-2.2.4.min.js"></script>
         <!--Popper js--> 
-        <script src="js/bootstrap/popper.min.js"></script>
+        <script src="${pageContext.request.contextPath}/yummy/js/bootstrap/popper.min.js"></script>
         <!--Bootstrap-4 js--> 
-        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="${pageContext.request.contextPath}/yummy/js/bootstrap/bootstrap.min.js"></script>
         <!--All Plugins JS--> 
-        <script src="js/others/plugins.js"></script>
+        <script src="${pageContext.request.contextPath}/yummy/js/others/plugins.js"></script>
         <!--Active JS--> 
-        <script src="js/active.js"></script>
+        <script src="${pageContext.request.contextPath}/yummy/js/active.js"></script>
     </body>

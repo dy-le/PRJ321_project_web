@@ -8,7 +8,6 @@ package controller;
 import dao.PostDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +19,7 @@ import model.post;
  *
  * @author lpxed
  */
-public class HomeServlet extends HttpServlet {
+public class PostServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,13 +35,16 @@ public class HomeServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try {
             /* TODO output your page here. You may use following sample code. */
+            String id = request.getParameter("idPost");
             PostDAO dao = new PostDAO();
-            List<post> list = dao.select();
-//            response.sendRedirect("yummy/index_1.jsp");
-            request.setAttribute("listpost", list);
-            RequestDispatcher rd = request.getRequestDispatcher("yummy/index_1.jsp");
+            int idp = 1;
+            post pt = dao.select(idp);
+//            response.sendRedirect("yummy/single.jsp");
+            request.setAttribute("post", pt);
+            request.setAttribute("haha", "hoho");
+            RequestDispatcher rd = request.getRequestDispatcher("yummy/single.jsp");
             rd.forward(request, response);
-        } catch (Exception Ex) {
+        } catch(Exception Ex){
             response.getWriter().println(Ex);
         }
     }
