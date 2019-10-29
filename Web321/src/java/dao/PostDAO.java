@@ -9,6 +9,7 @@ import context.DBContext;
 import java.sql.Array;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -71,11 +72,11 @@ public class PostDAO {
         }
         return list;
     }
-    
+
     public List<post> selectTop() throws Exception {
         post pt = new post();
         List<post> list = new ArrayList<>();
-        String sql = "select TOP (5) * from Paper ORDER BY Paper.[Date]";
+        String sql = "select TOP (5) * from Paper ORDER BY Date desc";
         try {
             Connection conn = new DBContext().getConnection();
             ResultSet rs = conn.prepareStatement(sql).executeQuery();
@@ -97,5 +98,20 @@ public class PostDAO {
             System.out.println(e.getMessage() + "  --> postDAO.select");
         }
         return list;
+    }
+
+    public boolean insert(post pt) throws Exception {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String sql = "INSERT INTO Paper VALUES (N'"+pt.getHeader()+"',N'"+pt.getAcc()+"',N'"+pt.getBody()+"','"+pt.getImg()+
+            "','" + pt.getTypeId() + "','" + format.format(pt.getDate()) + "'," + pt.getStatus() +")";
+        try {
+            Connection conn = new DBContext().getConnection();
+            conn.prepareCall(sql).execute();
+            conn.close();
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.select");
+        }
+        return false;
     }
 }

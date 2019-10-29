@@ -120,6 +120,13 @@ public class post {
         return status;
     }
 
+    public int getStatus() {
+        if(isStatus()){
+            return 1;
+        }
+        return 0;
+    }
+    
     public void setStatus(boolean status) {
         this.status = status;
     }
