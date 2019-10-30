@@ -34,9 +34,9 @@
 
     <body>
         <!--Preloader Start--> 
-        <div id="preloader">
+<!--        <div id="preloader">
             <div class="yummy-load"></div>
-        </div>
+        </div>-->
 
         <jsp:include page="header.jsp"/>
         <!-- ****** Welcome Post Area Start ****** -->

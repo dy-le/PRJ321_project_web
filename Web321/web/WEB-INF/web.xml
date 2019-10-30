@@ -11,6 +11,7 @@
     <filter-mapping>
         <filter-name>AuthenFilter</filter-name>
         <url-pattern>/profile</url-pattern>
+        <url-pattern>/profile.jsp</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>AuthorServlet</filter-name>
@@ -41,8 +42,13 @@
         <servlet-class>controller.ProfileServlet</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< HEAD
         <servlet-name>NewPostController</servlet-name>
         <servlet-class>controller.NewPostController</servlet-class>
+=======
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>controller.LogoutServlet</servlet-class>
+>>>>>>> cbd75aa0f4891475b1ae4431daf097aa27887740
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -69,8 +75,13 @@
         <url-pattern>/profile</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+<<<<<<< HEAD
         <servlet-name>NewPostController</servlet-name>
         <url-pattern>/newPost</url-pattern>
+=======
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+>>>>>>> cbd75aa0f4891475b1ae4431daf097aa27887740
     </servlet-mapping>
     <session-config>
         <session-timeout>

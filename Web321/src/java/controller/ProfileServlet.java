@@ -44,6 +44,8 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String a = request.getContextPath();
+        System.out.println("Contextpath: "+ a);
         Cookie [] cookies = request.getCookies();
         String id = "";
         for (Cookie cooky : cookies) {

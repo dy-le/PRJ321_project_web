@@ -259,8 +259,8 @@
                     </div>
                     <!-- ****** Blog Sidebar ****** -->
                     <jsp:include page="status.jsp" flush="true">
-                        <jsp:param name="account" value="Daemon Lee"/>
-                        <jsp:param name="id" value="18"/>
+                        <jsp:param name="name" value="${sessionScope.login.name}"/>
+                        <jsp:param name="id" value="${sessionScope.login.userID}"/>
                     </jsp:include>
                 </div>
             </div>
