@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/src/java/controller/NewPostController.java</file>
-            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/web/yummy/header.jsp</file>
-            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/web/yummy/newPost.jsp</file>
-            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/src/java/controller/ArchiveController.java</file>
+            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/src/java/model/post.java</file>
+            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/src/java/dao/typeDAO.java</file>
+            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/nbproject/build-impl.xml</file>
+            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/web/yummy/single.jsp</file>
             <file>file:/E:/java_project_web/PRJ321_project_web/Web321/src/java/dao/PostDAO.java</file>
+            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/src/java/model/TypePaper.java</file>
         </group>
     </open-files>
 </project-private>

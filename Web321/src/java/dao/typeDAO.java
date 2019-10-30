@@ -17,6 +17,7 @@ import model.TypePaper;
  * @author lpxed
  */
 public class typeDAO {
+
     public List<TypePaper> select() throws Exception {
         List<TypePaper> list = new ArrayList<>();
         String sql = "SELECT * FROM TypePaper";
@@ -35,6 +36,26 @@ public class typeDAO {
             System.out.println(e.getMessage() + "  --> typeDAO.select");
         }
         return list;
+    }
+
+    public TypePaper selectById(int ids) throws Exception {
+        TypePaper type = new TypePaper();
+        String sql = "SELECT * FROM TypePaper Where TypeID='"+ids+"'";
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            rs.next();
+            int id = rs.getInt("TypeID");
+            String content = rs.getString("Content");
+            type = new TypePaper(id, content);
+
+            rs.close();
+            conn.close();
+            return type;
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> typeDAO.select");
+        }
+        return type;
     }
 
 }
