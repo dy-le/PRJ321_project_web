@@ -98,7 +98,7 @@
 
             <form  style=" border:1px solid #ccc">
                 <div class="container">
-                    <img src="${pageContext.request.contextPath}/media/1.jpg" alt="" width="250" height="250">
+                    <img src="${pageContext.request.contextPath}/media/${cookie["id"].value}.jpg" alt="" width="250" height="250">
                     <hr>
                     <label for="name">
                         <b>Name</b>

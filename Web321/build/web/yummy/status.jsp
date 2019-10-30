@@ -28,21 +28,24 @@
 
     </head>
     <body>
+
         <!-- ****** Blog Sidebar ****** -->
         <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+
             <div class="blog-sidebar mt-5 mt-lg-0">
                 <!-- Single Widget Area -->
-                <div class="single-widget-area about-me-widget text-center">
-                    <div class="widget-title">
-                        <h6>About Me</h6>
+                <form action="home">
+                    <div class="single-widget-area about-me-widget text-center">
+                        <div class="widget-title">
+                            <h6>About Me</h6>
+                        </div>
+                        <div class="about-me-widget-thumb">
+                            <img src="${pageContext.request.contextPath}/media/img/${sessionScope.login.userID}.jpg" alt="">
+                        </div>
+                            <h4 class="font-shadow-into-light">${sessionScope.login.name}</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                     </div>
-                    <div class="about-me-widget-thumb">
-                        <img src="${pageContext.request.contextPath}/media/img/1.jpg" alt="">
-                    </div>
-                        <h4 class="font-shadow-into-light">${param.account}</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-                </div>
-
+                </form>
                 <!-- Single Widget Area -->
                 <div class="single-widget-area subscribe_widget text-center">
                     <div class="widget-title">
@@ -145,6 +148,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </body>
 </html>

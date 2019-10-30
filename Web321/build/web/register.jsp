@@ -116,11 +116,11 @@
                         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
                     </label>
 
-                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                    <p>If you have been account <a href="login" style="color:dodgerblue">Sign in</a>.</p>
 
                     <div class="clearfix">
                         <button type="submit" name="register" class="signupbtn">Sign Up</button>
-                        <button type="button" class="cancelbtn">Cancel</button>
+                        <button type="button" class="cancelbtn"><a href="home"> Cancel</button>
                     </div>
                 </div>
             </form>
