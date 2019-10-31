@@ -69,6 +69,31 @@ public class AccountDAO {
         return list;
     }
 
+    public Account select(int userid) throws Exception {
+        Account list = new Account();
+        String sql = "Select * from Account WHERE userid = " + userid;
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("userID");
+                int age = rs.getInt("age");
+                String name = rs.getString("name");
+                String phone = rs.getString("phone");
+                String email = rs.getString("email");
+                String userName = rs.getString("userName");
+                String password = rs.getString("password");
+                String roleAcc = rs.getString("roleAcc");
+                list = new Account(id, age, name, phone, email, userName, password, roleAcc);
+            }
+            rs.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> accountDAO.select");
+        }
+        return list;
+    }
+
     public List<Account> login(String user, String pwd) {
         List<Account> list = new ArrayList<>();
 
@@ -113,7 +138,7 @@ public class AccountDAO {
         return null;
     }
 
-    public void profile(String id, String name, int age, String phone, String email) {
+    public void profile(int id, String name, int age, String phone, String email) {
         String sql = "UPDATE [Account]"
                 + "SET Name = N'" + name + "', Age=" + age + ",Phone='" + phone + "',Email='" + email + "'"
                 + "WHERE UserID ='" + id + "'";
@@ -138,10 +163,10 @@ public class AccountDAO {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         //check register
-//        AccountDAO dao = new AccountDAO();
+        AccountDAO dao = new AccountDAO();
 //        dao.register("bangpc@fpt.edu.vn", "bangpc@fpt.edu.vn", "ahihi123");
 //        check login
 //        AccountDAO dao = new AccountDAO();
@@ -151,6 +176,10 @@ public class AccountDAO {
 //                System.out.println(list.get(i).getUserID());
 //            }
 //        } catch (Exception e) {
+//        }
+//        List<Account> list = dao.select(1);
+//        for (Account account : list) {
+//            System.out.println(account.getName());
 //        }
     }
 }

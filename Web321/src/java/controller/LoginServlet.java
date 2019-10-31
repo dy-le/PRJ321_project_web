@@ -48,7 +48,10 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
 //        response.sendRedirect("login/login.jsp");
 
-//        response.sendRedirect( request.getContextPath() + "/login/login.jsp");
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            response.sendRedirect("home");
+        }
         request.getRequestDispatcher("login/login.jsp").forward(request, response);
     }
 
@@ -69,6 +72,7 @@ public class LoginServlet extends HttpServlet {
         //get value from login.jsp
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
         HttpSession session = request.getSession(true);
 
         if (username != null
@@ -79,15 +83,8 @@ public class LoginServlet extends HttpServlet {
 
             //validate account
             if (acc.size() == 1) {
-                String role = "user";
-                if (username.equals("admin")) {
-                    role = "admin";
-                }
-                System.out.println("ahiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii111111111111112222222222222233333");
                 session.setAttribute("login", acc.get(0));
                 session.setMaxInactiveInterval(15 * 60);
-
-                response.addCookie(new Cookie("id", String.valueOf(acc.get(0).getUserID())));
                 response.sendRedirect("home");
             } else {
                 doGet(request, response);

@@ -8,13 +8,15 @@ package controller;
 import dao.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import static jdk.nashorn.internal.runtime.Debug.id;
+import model.Account;
 
 /**
  *
@@ -31,7 +33,6 @@ public class ProfileServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -44,18 +45,14 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String a = request.getContextPath();
-        System.out.println("Contextpath: "+ a);
-        Cookie [] cookies = request.getCookies();
-        String id = "";
-        for (Cookie cooky : cookies) {
-            if(cooky.getName().equals("id")){
-                id = cooky.getValue();
-            }
+
+        HttpSession session = request.getSession(false);
+        
+        if (session == null) {
+            response.sendRedirect("login");
+        } else {
+            request.getRequestDispatcher("profile.jsp").forward(request, response);
         }
-        HttpSession session = request.getSession();
-        session.setAttribute("account", new AccountDAO().getAccount(Integer.valueOf(id)));
-        request.getRequestDispatcher("profile.jsp").forward(request, response);
     }
 
     /**
@@ -74,32 +71,23 @@ public class ProfileServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            HttpSession session = request.getSession();
-            if (request.getParameter("save") != null
-                    && request.getParameter("name") != null) {
+            HttpSession session = request.getSession(false);
+            Account list = (Account) session.getAttribute("login");
+            if (session!= null) {
+
                 String name = request.getParameter("name");
                 int age = Integer.valueOf(request.getParameter("age"));
                 String phone = request.getParameter("phone");
                 String email = request.getParameter("email");
-                Cookie[] cookies = request.getCookies();
-                String id = "";
-                for (Cookie cooky : cookies) {
-                    if (cooky.getName().equals("id")) {
-                        id = cooky.getValue();
-                    }
-                }
-                session.setAttribute("email", email);
-                session.setAttribute("name", name);
-                session.setAttribute("age", age);
-                session.setAttribute("phone", phone);
+
 
                 AccountDAO dao = new AccountDAO();
-                dao.profile(id, name, age, phone, email);
-
+                dao.profile(list.getUserID(), name, age, phone, email);
+                session.setAttribute("login", dao.select(list.getUserID()));
+                response.sendRedirect("profile");
+            } else {
+                doGet(request, response);
             }
-
-            RequestDispatcher rs = request.getRequestDispatcher("profile.jsp");
-            rs.forward(request, response);
 
 //            String change = getServletConfig().getInitParameter("change");
 //            request.setAttribute("change", change);

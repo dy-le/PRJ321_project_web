@@ -37,6 +37,7 @@
         <jsp:include page="header.jsp"/>
 
         <!-- ****** Breadcumb Area Start ****** -->
+
         <div class="breadcumb-area" style="background-image: url(${pageContext.request.contextPath}/yummy/img/bg-img/breadcumb.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
@@ -112,7 +113,7 @@
                             </div>
                         </div>
                     </c:forEach>
-                    
+
                     <div class="col-12">
                         <div class="pagination-area d-sm-flex mt-15">
                             <nav aria-label="#">

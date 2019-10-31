@@ -1,4 +1,4 @@
-<%-- 
+c<%-- 
     Document   : register
     Created on : Oct 12, 2019, 9:03:36 PM
     Author     : Tuan Anh
@@ -71,6 +71,7 @@
 
             /* Add padding to container elements */
             .container {
+                top: 0;
                 margin: 10px;
                 padding: 16px;
             }
@@ -91,35 +92,38 @@
 
         </style>
     <body>
-        <form action="profile">
+        <%--<jsp:include page="yummy/header.jsp"/>--%>
+        <form action="profile" method="post">
             <div class="container">
                 <%--<jsp:include page="header.jsp"/>--%>
             </div>
 
             <form  style=" border:1px solid #ccc">
                 <div class="container">
-                    <img src="${pageContext.request.contextPath}/media/${cookie["id"].value}.jpg" alt="" width="250" height="250">
-                    <hr>
-                    <label for="name">
-                        <b>Name</b>
-                    </label>
-                    <!--<input type="text" placeholder="Empty"  name="name" value="${sessionScope.name}" ${change=="0"?"disabled":""}  required>-->
-                    <input type="text" placeholder="Empty"  name="name" value="${sessionScope.account.name}"  required disabled>
+                        <img src="${pageContext.request.contextPath}/media/img/${sessionScope.login.userID}.jpg" alt="" width="250" height="250">
+                        <hr>
+                        <label for="name">
+                            <b>Name</b>
+                        </label>
+                        <!--<input type="text" placeholder="Empty"  name="name" value="${sessionScope.name}" ${change=="0"?"disabled":""}  required>-->
+                        <input type="text" placeholder="Empty"  name="name" value="${sessionScope.login.name}"  required disabled>
 
 
-                    <label for="age"><b>Age</b></label>
-                    <input type="text" placeholder="Empty"   name="age" value="${sessionScope.account.age}" required disabled>
+                        <label for="age"><b>Age</b></label>
+                        <input type="text" placeholder="Empty"   name="age" value="${sessionScope.login.age}" required disabled>
 
-                    <label for="phone"><b>Phone</b></label>
-                    <input type="text" placeholder="Empty"   name="phone" value="${sessionScope.account.phone}" required disabled>
+                        <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Empty"   name="phone" value="${sessionScope.login.phone}" required disabled>
 
-                    <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Empty"  name="email" value="${sessionScope.account.email}" required disabled>
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Empty"  name="email" value="${sessionScope.login.email}" required disabled>
 
-                    <div class="clearfix">
-                        <button type="button" name="change" id="1" onclick="changeValue();"  value="Change" class="signupbtn">Change</button>
-                        <button type="submit" class="cancelbtn" name="save" value="save">Save</button>
-                    </div>
+                        <div class="clearfix">               
+                            <button type="button" name="change" id="1" onclick="changeValue();"  value="Change" class="signupbtn">Change</button>
+                            <button type="submit" class="cancelbtn" name="save" value="save">Save</button>
+
+                            <button type="button" name="home" class="signupbtn" style="background: #3366FF; width: 100%;"><a href="home">HOME</button>
+                        </div>
                 </div>
             </form>
             <div class="footer">
@@ -136,11 +140,11 @@
         if (x === "Change") {
             document.getElementById("1").innerHTML = "Cancel changing";
             document.getElementById("1").value = "Cancel changing";
-            $("input").prop('disabled',false);
+            $("input").prop('disabled', false);
         } else {
             document.getElementById("1").innerHTML = "Change";
             document.getElementById("1").value = "Change";
-            $("input").prop('disabled',true);
+            $("input").prop('disabled', true);
         }
     }
 </script>
