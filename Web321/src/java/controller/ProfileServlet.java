@@ -48,7 +48,7 @@ public class ProfileServlet extends HttpServlet {
 
         HttpSession session = request.getSession(false);
         
-        if (session == null) {
+        if (session.getAttribute("login") == null) {
             response.sendRedirect("login");
         } else {
             request.getRequestDispatcher("profile.jsp").forward(request, response);

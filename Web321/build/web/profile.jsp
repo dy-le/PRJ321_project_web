@@ -1,4 +1,4 @@
-c<%-- 
+<%-- 
     Document   : register
     Created on : Oct 12, 2019, 9:03:36 PM
     Author     : Tuan Anh
@@ -148,4 +148,3 @@ c<%--
         }
     }
 </script>
-

@@ -177,9 +177,7 @@ public class AccountDAO {
 //            }
 //        } catch (Exception e) {
 //        }
-//        List<Account> list = dao.select(1);
-//        for (Account account : list) {
-//            System.out.println(account.getName());
-//        }
+//        Account list = dao.select(1);
+//        System.out.println(list.getName());
     }
 }

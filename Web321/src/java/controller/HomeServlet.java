@@ -38,9 +38,7 @@ public class HomeServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             PostDAO dao = new PostDAO();
             List<post> list = dao.selectTop();
-//            response.sendRedirect("yummy/index_1.jsp");
             request.setAttribute("listpost", list);
-//            response.sendRedirect("yummy/index_1.jsp");
             RequestDispatcher rd = request.getRequestDispatcher("yummy/index_1.jsp");
             rd.forward(request, response);
         } catch (Exception Ex) {
