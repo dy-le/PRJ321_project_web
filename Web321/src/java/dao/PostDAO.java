@@ -6,13 +6,13 @@
 package dao;
 
 import context.DBContext;
-import java.sql.Array;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import model.Comment;
 import model.post;
 
 /**
@@ -102,8 +102,8 @@ public class PostDAO {
 
     public boolean insert(post pt) throws Exception {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        String sql = "INSERT INTO Paper VALUES (N'"+pt.getHeader()+"',N'"+pt.getAcc()+"',N'"+pt.getBody()+"','"+pt.getImg()+
-            "','" + pt.getTypeId() + "','" + format.format(pt.getDate()) + "'," + pt.getStatus() +")";
+        String sql = "INSERT INTO Paper VALUES (N'" + pt.getHeader() + "',N'" + pt.getAcc() + "',N'" + pt.getBody() + "','" + pt.getImg()
+                + "','" + pt.getTypeId() + "','" + format.format(pt.getDate()) + "'," + pt.getStatus() + ")";
         try {
             Connection conn = new DBContext().getConnection();
             conn.prepareCall(sql).execute();
@@ -114,9 +114,11 @@ public class PostDAO {
         }
         return false;
     }
-    
-    public void addcomment(int userid, int paperid,String commentCt){
-        String sql = "Insert into Comment values ("+ userid + ","+ paperid + ",N'" + commentCt + "')";
+
+    public void addcomment(int userid, int paperid, String commentCt) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        String sql = "Insert into Comment values (" + userid + "," + paperid + ",N'" + commentCt + "','" + format.format(date) + "')";
         try {
             Connection conn = new DBContext().getConnection();
             conn.prepareCall(sql).execute();
@@ -125,12 +127,53 @@ public class PostDAO {
             System.out.println(e.getMessage() + "  --> postDAO.addcomment");
         }
     }
-    
-    public static void main(String[] args) {
-//        PostDAO dao = new PostDAO();
-//        dao.addcomment(1, 1, "hôm nay tôi buồn ahihi");
+
+    public String getNameComment(int userid){
+        String name = "";
+        String sql = "select name from account where userid=" + userid;
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while(rs.next()){
+                name = rs.getString("name");
+            }
+            rs.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.addcomment");
+        }
+        return name;
     }
     
-    
-    
+    public List<Comment> getComment(int paperid) {
+        String sql = "Select * from Comment where paperid='"+ paperid + "'";
+        List<Comment> list = new ArrayList();
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while (rs.next()) {
+                int userid = rs.getInt("userid");
+                String commentct = rs.getString("Content Comment");
+                Date date = rs.getDate("Date comment");
+                String name = getNameComment(userid);
+                list.add(new Comment(userid, paperid, commentct, name, date));
+            }
+            rs.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.getComment");
+        }
+
+        return list;
+    }
+
+    public static void main(String[] args) {
+        PostDAO dao = new PostDAO();
+//        dao.addcomment(1, 1, "111111: hôm nay tôi buồn ahihi");
+//        List<Comment> list = dao.getComment(2);
+//        for (Comment x : list) {
+//            System.out.println(x.getName());
+//        }
+    }
+
 }

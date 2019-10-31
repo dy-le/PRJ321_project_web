@@ -132,13 +132,16 @@ CREATE TABLE Comment(
 	UserID int,
 	PaperID int,
 	[Content Comment] ntext,
+	[Date comment] date,
 	
 )
 GO
 INSERT INTO Comment
-VALUES (1,1,N'Theo tài liệu điều tra, khoảng 7h30 ngày 5/10, tại vỉa hè trước cửa lớp mầm non tư thục Tuổi Thơ Xanh (thuộc tổ 2, khu 2, phường Yết Kiêu, thành phố Hạ Long), Toàn đã có hành vi chửi bới, tát vào mặt và bắt 3 cô giáo Hà Thị H.,  Ngô Vân K., Đặng Thị L. phải quỳ gối xin lỗi vì cho rằng các cô đã bạo hành con gái mình.'),
-(2,2,N'Sau khi nhận được tin báo và tiến hành xác minh, cơ quan Cảnh sát điều tra Công an thành phố Hạ Long (Quảng Ninh) đã ra quyết định khởi tố vụ án, khởi tố bị can đối với Đỗ Thanh Toàn (SN 1992, trú phường Cao Xanh, TP Hạ Long) về hành vi làm nhục người khác.'),
-(3,3,N'Phòng GD&ĐT TP Hạ Long ngay sau khi biết thông tin xảy ra cũng đã báo cáo sự việc lên cấp trên và yêu cầu xử lý nghiêm người có hành vi làm nhục giáo viên này. Đại diện phòng cũng xuống thăm hỏi, động viên các cô giáo bị hành hung. Các cô giáo ổn định tinh thần và dạy học bình thường.');
+VALUES (1,1,N'Theo tài liệu điều tra, khoảng 7h30 ngày 5/10, tại vỉa hè trước cửa lớp mầm non tư thục Tuổi Thơ Xanh (thuộc tổ 2, khu 2, phường Yết Kiêu, thành phố Hạ Long), Toàn đã có hành vi chửi bới, tát vào mặt và bắt 3 cô giáo Hà Thị H.,  Ngô Vân K., Đặng Thị L. phải quỳ gối xin lỗi vì cho rằng các cô đã bạo hành con gái mình.','2019-01-01'),
+(2,2,N'Sau khi nhận được tin báo và tiến hành xác minh, cơ quan Cảnh sát điều tra Công an thành phố Hạ Long (Quảng Ninh) đã ra quyết định khởi tố vụ án, khởi tố bị can đối với Đỗ Thanh Toàn (SN 1992, trú phường Cao Xanh, TP Hạ Long) về hành vi làm nhục người khác.','2019-01-01'),
+(3,3,N'Phòng GD&ĐT TP Hạ Long ngay sau khi biết thông tin xảy ra cũng đã báo cáo sự việc lên cấp trên và yêu cầu xử lý nghiêm người có hành vi làm nhục giáo viên này. Đại diện phòng cũng xuống thăm hỏi, động viên các cô giáo bị hành hung. Các cô giáo ổn định tinh thần và dạy học bình thường.','2019-01-01'),
+(1,2,N'Theo tài liệu điều tra, khoảng 7h30 ngày 5/10, tại vỉa hè trước cửa lớp mầm non tư thục Tuổi Thơ Xanh (thuộc tổ 2, khu 2, phường Yết Kiêu, thành phố Hạ Long), Toàn đã có hành vi chửi bới, tát vào mặt và bắt 3 cô giáo Hà Thị H.,  Ngô Vân K., Đặng Thị L. phải quỳ gối xin lỗi vì cho rằng các cô đã bạo hành con gái mình.','2019-01-01'),
+(1,3,N'Theo tài liệu điều tra, khoảng 7h30 ngày 5/10, tại vỉa hè trước cửa lớp mầm non tư thục Tuổi Thơ Xanh (thuộc tổ 2, khu 2, phường Yết Kiêu, thành phố Hạ Long), Toàn đã có hành vi chửi bới, tát vào mặt và bắt 3 cô giáo Hà Thị H.,  Ngô Vân K., Đặng Thị L. phải quỳ gối xin lỗi vì cho rằng các cô đã bạo hành con gái mình.','2019-01-01');
 GO
 ALTER TABLE Paper ADD CONSTRAINT [FK.paper.typeid] FOREIGN KEY (TypeID) REFERENCES TypePaper(TypeID);
 GO

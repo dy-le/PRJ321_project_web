@@ -36,17 +36,22 @@ public class PostServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            HttpSession session = request.getSession(false);
-
             PostDAO dao = new PostDAO();
             List<post> list = dao.selectTop();
-            Account login = (Account) session.getAttribute("login");
+            
             String id = request.getParameter("idPost");
             post pt = dao.select(id);
 
             request.setAttribute("post", pt);
             request.setAttribute("listpost", list);
-
+            
+            if(id != null){
+                request.setAttribute("listComment", dao.getComment(Integer.valueOf(id)));
+            }
+            
+            
+            HttpSession session = request.getSession(false);
+            Account login = (Account) session.getAttribute("login");
             if (login != null
                     && request.getParameter("message") != null
                     && request.getParameter("idPost") != null) {
@@ -57,7 +62,6 @@ public class PostServlet extends HttpServlet {
                 System.out.println("commentct: " + commentct);
                 dao.addcomment(userid, paperid, commentct);
             }
-            
             RequestDispatcher rd = request.getRequestDispatcher("yummy/single.jsp");
             rd.forward(request, response);
         } catch (Exception Ex) {
@@ -91,7 +95,21 @@ public class PostServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+//        HttpSession session = request.getSession(false);
+//
+//        PostDAO dao = new PostDAO();
+//        Account login = (Account) session.getAttribute("login");
+//
+//        if (login != null
+//                && request.getParameter("message") != null
+//                && request.getParameter("idPost") != null) {
+//            int userid = login.getUserID();
+//            int paperid = Integer.valueOf(request.getParameter("idPost"));
+//            String commentct = request.getParameter("message");
+//            dao.addcomment(userid, paperid, commentct);
+//        }
+//        doGet(request, response);
     }
 
     /**

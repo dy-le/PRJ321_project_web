@@ -176,6 +176,24 @@
                                     <h4 class="mb-30">2 Comments</h4>
 
                                     <ol>
+                                        <c:forEach var="x" items="${listComment}">
+                                            <li class="single_comment_area">
+                                                <div class="comment-wrapper d-flex">
+                                                    <!-- Comment Meta -->
+                                                    <div class="comment-author">
+                                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/17.jpg" alt="">
+                                                    </div>
+                                                    <!-- Comment Content -->
+                                                    <div class="comment-content">
+                                                        <span class="comment-date text-muted">${x.date}</span>
+                                                        <h5>${x.name}</h5>
+                                                        <p>${x.commentct}</p>
+                                                        <a href="#">Like</a>
+                                                        <a class="active" href="#">Reply</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </c:forEach>
                                         <!-- Single Comment Area -->
                                         <li class="single_comment_area">
                                             <div class="comment-wrapper d-flex">
@@ -192,24 +210,24 @@
                                                     <a class="active" href="#">Reply</a>
                                                 </div>
                                             </div>
-                                            <ol class="children">
-                                                <li class="single_comment_area">
-                                                    <div class="comment-wrapper d-flex">
-                                                        <!-- Comment Meta -->
-                                                        <div class="comment-author">
-                                                            <img src="${pageContext.request.contextPath}/yummy/img/blog-img/18.jpg" alt="">
-                                                        </div>
-                                                        <!-- Comment Content -->
-                                                        <div class="comment-content">
-                                                            <span class="comment-date text-muted">27 Aug 2018</span>
-                                                            <h5>Brandon Kelley</h5>
-                                                            <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
-                                                            <a href="#">Like</a>
-                                                            <a class="active" href="#">Reply</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ol>
+                                            <!--                                            <ol class="children">
+                                                                                            <li class="single_comment_area">
+                                                                                                <div class="comment-wrapper d-flex">
+                                                                                                     Comment Meta 
+                                                                                                    <div class="comment-author">
+                                                                                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/18.jpg" alt="">
+                                                                                                    </div>
+                                                                                                     Comment Content 
+                                                                                                    <div class="comment-content">
+                                                                                                        <span class="comment-date text-muted">27 Aug 2018</span>
+                                                                                                        <h5>Brandon Kelley</h5>
+                                                                                                        <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
+                                                                                                        <a href="#">Like</a>
+                                                                                                        <a class="active" href="#">Reply</a>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                        </ol>-->
                                         </li>
                                         <li class="single_comment_area">
                                             <div class="comment-wrapper d-flex">
@@ -236,7 +254,7 @@
                                         <h4 class="mb-30">Leave A Comment</h4>
 
                                         <!-- Comment Form -->
-                                        <form action="post">
+                                        <form action="post" method="">
                                             <!--                                            <div class="form-group">
                                                                                             <input type="text" class="form-control" id="contact-name" placeholder="Name">
                                                                                         </div>

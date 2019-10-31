@@ -48,7 +48,7 @@ public class NewPostController extends HttpServlet {
                 int typeId = Integer.valueOf(request.getParameter("stypeSelect"));
                 Date date = new Date();
                 System.out.println(date);
-                post pt = new post(20, header, body, "duy1.jpg", typeId, date, true, "daemon-lee");
+                post pt = new post(1, header, body, "duy1.jpg", typeId, date, true, "daemon-lee");
                 PostDAO dao1 = new PostDAO();
                 if (dao1.insert(pt)) {
                     response.sendRedirect("/Web321/home");
