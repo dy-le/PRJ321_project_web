@@ -41,7 +41,7 @@ public class PostDAO {
             conn.close();
             return pt;
         } catch (Exception e) {
-            System.out.println(e.getMessage() + "  --> postDAO.select");
+            System.out.println(e.getMessage() + "  --> postDAO.select1");
         }
         return pt;
     }
@@ -68,7 +68,7 @@ public class PostDAO {
             conn.close();
             return list;
         } catch (Exception e) {
-            System.out.println(e.getMessage() + "  --> postDAO.select");
+            System.out.println(e.getMessage() + "  --> postDAO.select2");
         }
         return list;
     }
@@ -95,7 +95,7 @@ public class PostDAO {
             conn.close();
             return list;
         } catch (Exception e) {
-            System.out.println(e.getMessage() + "  --> postDAO.select");
+            System.out.println(e.getMessage() + "  --> postDAO.selectTop");
         }
         return list;
     }
@@ -110,8 +110,27 @@ public class PostDAO {
             conn.close();
             return true;
         } catch (Exception e) {
-            System.out.println(e.getMessage() + "  --> postDAO.select");
+            System.out.println(e.getMessage() + "  --> postDAO.insert");
         }
         return false;
     }
+    
+    public void addcomment(int userid, int paperid,String commentCt){
+        String sql = "Insert into Comment values ("+ userid + ","+ paperid + ",N'" + commentCt + "')";
+        try {
+            Connection conn = new DBContext().getConnection();
+            conn.prepareCall(sql).execute();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.addcomment");
+        }
+    }
+    
+    public static void main(String[] args) {
+//        PostDAO dao = new PostDAO();
+//        dao.addcomment(1, 1, "hôm nay tôi buồn ahihi");
+    }
+    
+    
+    
 }

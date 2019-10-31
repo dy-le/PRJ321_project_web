@@ -236,8 +236,8 @@
                                         <h4 class="mb-30">Leave A Comment</h4>
 
                                         <!-- Comment Form -->
-                                        <form action="#" method="post">
-                                            <div class="form-group">
+                                        <form action="post" method="post">
+<!--                                            <div class="form-group">
                                                 <input type="text" class="form-control" id="contact-name" placeholder="Name">
                                             </div>
                                             <div class="form-group">
@@ -245,7 +245,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" id="contact-website" placeholder="Website">
-                                            </div>
+                                            </div>-->
                                             <div class="form-group">
                                                 <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
                                             </div>

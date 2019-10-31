@@ -205,7 +205,7 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <a href=\"#\">Multipurpose</a>\r\n");
       out.write("                                    <a href=\"#\">Design</a>\r\n");
       out.write("                                    <a href=\"#\">");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${post.typeId}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${post.typeId.content}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</a>\r\n");
       out.write("                                </div>\r\n");
       out.write("\r\n");
@@ -315,7 +315,7 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\r\n");
       out.write("                    <!-- ****** Blog Sidebar ****** -->\r\n");
       out.write("                    ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "status.jsp" + "?" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("account", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Daemon Lee", request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("id", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("18", request.getCharacterEncoding()), out, true);
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "status.jsp" + "?" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("name", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.login.name}", java.lang.String.class, (PageContext)_jspx_page_context, null), request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("id", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.login.userID}", java.lang.String.class, (PageContext)_jspx_page_context, null), request.getCharacterEncoding()), out, true);
       out.write("\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");

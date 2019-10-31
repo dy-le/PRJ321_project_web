@@ -7,13 +7,14 @@ package controller;
 
 import dao.PostDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.Account;
 import model.post;
 
 /**
@@ -35,14 +36,14 @@ public class PostServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            /* TODO output your page here. You may use following sample code. */
-            String id = request.getParameter("idPost");
             PostDAO dao = new PostDAO();
+
+            String id = request.getParameter("idPost");
             post pt = dao.select(id);
-//            response.sendRedirect("yummy/single.jsp");
             request.setAttribute("post", pt);
             List<post> list = dao.selectTop();
             request.setAttribute("listpost", list);
+
             RequestDispatcher rd = request.getRequestDispatcher("yummy/single.jsp");
             rd.forward(request, response);
         } catch (Exception Ex) {
@@ -76,7 +77,29 @@ public class PostServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+
+        HttpSession session = request.getSession(false);
+        Account login = (Account) session.getAttribute("login");
+
+        if (login != null
+                && request.getParameter("idPost") != null
+                && request.getParameter("message") != null) {
+            int userid = login.getUserID();
+            int paperid = Integer.valueOf(request.getParameter("idPost"));
+            String commentct = request.getParameter("message");
+            System.out.println("userid: " + userid);
+            System.out.println("paperid: " + paperid);
+            System.out.println("commentct: " + commentct);
+            PostDAO dao = new PostDAO();
+            dao.addcomment(userid, paperid, commentct);
+            response.sendRedirect("post?idPost=" + paperid);
+        }
+
+//        processRequest(request, response);
+
+
     }
 
     /**

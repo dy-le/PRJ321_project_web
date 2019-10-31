@@ -53,7 +53,7 @@ public class typeDAO {
             conn.close();
             return type;
         } catch (Exception e) {
-            System.out.println(e.getMessage() + "  --> typeDAO.select");
+            System.out.println(e.getMessage() + "  --> typeDAO.selectById");
         }
         return type;
     }
