@@ -37,11 +37,11 @@ CREATE TABLE TypePaper (
 )
 GO
 INSERT INTO TypePaper
-VALUES (N'Thể thao'),
-(N'Thời trang'),
-(N'Ẩm thực'),
-(N'Thời sự'),
-(N'Khác');
+VALUES ('News'),
+('Fashion'),
+('Food'),
+('Spost'),
+('Others');
 
 GO
 

@@ -113,7 +113,7 @@
                                         <div class="dropdown-menu" aria-labelledby="yummyDropdown">
                                             <a class="dropdown-item" href="${pageContext.request.contextPath}/home">Home</a>
                                             <a class="dropdown-item" href="${pageContext.request.contextPath}/archive">Archive</a>
-                                            <a class="dropdown-item" href="single.html">Single Blog</a>
+                                            <a class="dropdown-item" href="${pageContext.request.contextPath}/newPost">Create new Post</a>
                                             <a class="dropdown-item" href="static.html">Static Page</a>
                                             <a class="dropdown-item" href="contact.html">Contact</a>
                                         </div>

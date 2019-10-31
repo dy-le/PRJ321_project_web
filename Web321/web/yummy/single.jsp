@@ -133,7 +133,7 @@
                                 <div class="tags-area">
                                     <a href="#">Multipurpose</a>
                                     <a href="#">Design</a>
-                                    <a href="#">${post.typeId}</a>
+                                    <a href="#">${post.typeId.content}</a>
                                 </div>
 
                                 <!-- Related Post Area -->

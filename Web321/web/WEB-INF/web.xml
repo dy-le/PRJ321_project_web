@@ -42,6 +42,10 @@
         <servlet-class>controller.ProfileServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>NewPostController</servlet-name>
+        <servlet-class>controller.NewPostController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>controller.LogoutServlet</servlet-class>
     </servlet>
@@ -70,8 +74,14 @@
         <url-pattern>/profile</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+
+        <servlet-name>NewPostController</servlet-name>
+        <url-pattern>/newPost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
+
     </servlet-mapping>
     <session-config>
         <session-timeout>
