@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/src/java/model/post.java</file>
-            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/src/java/dao/typeDAO.java</file>
-            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/nbproject/build-impl.xml</file>
-            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/web/yummy/single.jsp</file>
-            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/src/java/dao/PostDAO.java</file>
-            <file>file:/E:/java_project_web/PRJ321_project_web/Web321/src/java/model/TypePaper.java</file>
+            <file>file:/C:/Users/Tuan%20Anh/Documents/New%20folder/PRJ321_project_web/Web321/src/java/controller/ProfileServlet.java</file>
+            <file>file:/C:/Users/Tuan%20Anh/Documents/New%20folder/PRJ321_project_web/Web321/src/java/controller/LogoutServlet.java</file>
+            <file>file:/C:/Users/Tuan%20Anh/Documents/New%20folder/PRJ321_project_web/Web321/src/java/controller/LoginServlet.java</file>
+            <file>file:/C:/Users/Tuan%20Anh/Documents/New%20folder/PRJ321_project_web/Web321/web/login/login.jsp</file>
+            <file>file:/C:/Users/Tuan%20Anh/Documents/New%20folder/PRJ321_project_web/Web321/web/profile.jsp</file>
+            <file>file:/C:/Users/Tuan%20Anh/Documents/New%20folder/PRJ321_project_web/Web321/web/register.jsp</file>
+            <file>file:/C:/Users/Tuan%20Anh/Documents/New%20folder/PRJ321_project_web/Web321/src/java/dao/AccountDAO.java</file>
         </group>
     </open-files>
 </project-private>
