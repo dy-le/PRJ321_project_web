@@ -6,6 +6,7 @@
 package model;
 
 import dao.AccountDAO;
+import dao.typeDAO;
 import java.util.Date;
 
 /**
@@ -100,8 +101,10 @@ public class post {
         this.acc = acc;
     }
 
-    public int getTypeId() {
-        return typeId;
+    public TypePaper getTypeId() throws Exception {
+        typeDAO a = new typeDAO();
+        TypePaper type = a.selectById(typeId);
+        return type;
     }
 
     public void setTypeId(int typeId) {
@@ -120,6 +123,13 @@ public class post {
         return status;
     }
 
+    public int getStatus() {
+        if(isStatus()){
+            return 1;
+        }
+        return 0;
+    }
+    
     public void setStatus(boolean status) {
         this.status = status;
     }
