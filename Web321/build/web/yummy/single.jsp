@@ -181,7 +181,7 @@
                                                 <div class="comment-wrapper d-flex">
                                                     <!-- Comment Meta -->
                                                     <div class="comment-author">
-                                                        <img src="${pageContext.request.contextPath}/yummy/img/blog-img/17.jpg" alt="">
+                                                        <img src="${pageContext.request.contextPath}/media/img/${x.userid}.jpg" alt="">
                                                     </div>
                                                     <!-- Comment Content -->
                                                     <div class="comment-content">
