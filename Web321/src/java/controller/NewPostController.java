@@ -16,6 +16,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.Account;
 import model.TypePaper;
 import model.post;
 
@@ -42,13 +44,16 @@ public class NewPostController extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             typeDAO dao = new typeDAO();
             List<TypePaper> list = dao.select();
-            if (request.getParameter("submit") != null) {
+            HttpSession session = request.getSession(false);
+            if (request.getParameter("submit") != null && session.getAttribute("login")!=null) {
                 String header = request.getParameter("title");
                 String body = request.getParameter("body");
                 int typeId = Integer.valueOf(request.getParameter("stypeSelect"));
                 Date date = new Date();
-                System.out.println(date);
-                post pt = new post(1, header, body, "duy1.jpg", typeId, date, true, "daemon-lee");
+                Account acc = (Account) session.getAttribute("login");
+                System.out.println(acc.toString());
+                post pt = new post(1, header, body, "duy1.jpg", typeId, date, true, acc.getName());
+                System.out.println("hey "+date);
                 PostDAO dao1 = new PostDAO();
                 if (dao1.insert(pt)) {
                     response.sendRedirect("/Web321/home");

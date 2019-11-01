@@ -45,9 +45,7 @@ public class PostServlet extends HttpServlet {
             request.setAttribute("post", pt);
             request.setAttribute("listpost", list);
             
-            if(id != null){
-                request.setAttribute("listComment", dao.getComment(Integer.valueOf(id)));
-            }
+            
             
             
             HttpSession session = request.getSession(false);
@@ -62,6 +60,11 @@ public class PostServlet extends HttpServlet {
                 System.out.println("commentct: " + commentct);
                 dao.addcomment(userid, paperid, commentct);
             }
+            
+            if(id != null){
+                request.setAttribute("listComment", dao.getComment(Integer.valueOf(id)));
+            }
+            
             RequestDispatcher rd = request.getRequestDispatcher("yummy/single.jsp");
             rd.forward(request, response);
         } catch (Exception Ex) {

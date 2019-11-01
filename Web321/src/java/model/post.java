@@ -101,7 +101,11 @@ public class post {
         this.acc = acc;
     }
 
-    public TypePaper getTypeId() throws Exception {
+    public int getTypeId() {
+        return typeId;
+    }
+
+    public TypePaper getType() throws Exception {
         typeDAO a = new typeDAO();
         TypePaper type = a.selectById(typeId);
         return type;

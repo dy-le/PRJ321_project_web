@@ -99,4 +99,9 @@ public class Account {
         this.roleAcc = roleAcc;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" + "userID=" + userID + ", age=" + age + ", name=" + name + ", phone=" + phone + ", email=" + email + ", userName=" + userName + ", password=" + password + ", roleAcc=" + roleAcc + '}';
+    }
+
 }

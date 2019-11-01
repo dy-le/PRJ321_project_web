@@ -102,8 +102,9 @@ public class PostDAO {
 
     public boolean insert(post pt) throws Exception {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        String sql = "INSERT INTO Paper VALUES (N'" + pt.getHeader() + "',N'" + pt.getAcc() + "',N'" + pt.getBody() + "','" + pt.getImg()
-                + "','" + pt.getTypeId() + "','" + format.format(pt.getDate()) + "'," + pt.getStatus() + ")";
+        String sql = "INSERT INTO Paper VALUES (N'"+pt.getHeader()+"',N'"+pt.getAcc()
+                +"',N'"+pt.getBody()+"','"+pt.getImg()+"','"+pt.getTypeId()+"','"
+                +format.format(pt.getDate())+"',"+pt.getStatus()+")";
         try {
             Connection conn = new DBContext().getConnection();
             conn.prepareCall(sql).execute();
@@ -167,13 +168,14 @@ public class PostDAO {
         return list;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         PostDAO dao = new PostDAO();
 //        dao.addcomment(1, 1, "111111: hôm nay tôi buồn ahihi");
 //        List<Comment> list = dao.getComment(2);
 //        for (Comment x : list) {
 //            System.out.println(x.getName());
 //        }
+//        dao.insert(new post(1, "say hay", "ahihhi", "duy1.jpg", 1, new Date(), true, "daemon-lee"));
     }
 
 }
