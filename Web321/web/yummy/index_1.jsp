@@ -34,9 +34,9 @@
 
     <body>
         <!--Preloader Start--> 
-<!--        <div id="preloader">
-            <div class="yummy-load"></div>
-        </div>-->
+        <!--        <div id="preloader">
+                    <div class="yummy-load"></div>
+                </div>-->
 
         <jsp:include page="header.jsp"/>
         <!-- ****** Welcome Post Area Start ****** -->
@@ -232,7 +232,7 @@
                                             <div class="post-comment-share-area d-flex">
                                                 <!-- Post Favourite -->
                                                 <div class="post-favourite">
-                                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
+                                                    <a onclick="focusMethod()"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
                                                 </div>
                                                 <!-- Post Comments -->
                                                 <div class="post-comments">

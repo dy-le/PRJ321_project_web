@@ -8,14 +8,11 @@ package controller;
 import dao.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import static jdk.nashorn.internal.runtime.Debug.id;
 import model.Account;
 
 /**
@@ -47,12 +44,19 @@ public class ProfileServlet extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = request.getSession(false);
-        
-        if (session.getAttribute("login") == null) {
-            response.sendRedirect("login");
-        } else {
-            request.getRequestDispatcher("profile.jsp").forward(request, response);
+        try {
+            if (session.getAttribute("login") == null) {
+                response.sendRedirect("login");
+            } else {
+                AccountDAO dao = new AccountDAO();
+                Account list = (Account) session.getAttribute("login");
+                session.setAttribute("login", dao.select(list.getUserID()));
+                
+                request.getRequestDispatcher("profile.jsp").forward(request, response);
+            }
+        } catch (Exception e) {
         }
+
     }
 
     /**
@@ -69,22 +73,27 @@ public class ProfileServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
+        if (request.getParameter("username") == null) {
+            doGet(request, response);
+        }
+
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             HttpSession session = request.getSession(false);
             Account list = (Account) session.getAttribute("login");
-            if (session!= null) {
+            if (session != null) {
 
+                
                 String name = request.getParameter("name");
                 int age = Integer.valueOf(request.getParameter("age"));
                 String phone = request.getParameter("phone");
                 String email = request.getParameter("email");
 
-
                 AccountDAO dao = new AccountDAO();
                 dao.profile(list.getUserID(), name, age, phone, email);
                 session.setAttribute("login", dao.select(list.getUserID()));
+
                 response.sendRedirect("profile");
+
             } else {
                 doGet(request, response);
             }

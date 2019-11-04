@@ -100,6 +100,9 @@
                     <h1>Sign Up</h1>
                     <p>Please fill in this form to create an account.</p>
                     <hr>
+                    <label for="Name"><b>Name</b></label>
+                    <input type="text" placeholder="Name" name="name" required>
+                    
                     <label for="username"><b>Username</b></label>
                     <input type="text" placeholder="Username" name="username" required>
 

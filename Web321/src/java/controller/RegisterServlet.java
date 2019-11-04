@@ -48,6 +48,9 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
         HttpSession session = request.getSession(false);
         if(session.getAttribute("login")  != null){
             response.sendRedirect("home");
@@ -70,11 +73,13 @@ public class RegisterServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
+        String name = request.getParameter("name");
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password1 = request.getParameter("password1");
         String password2 = request.getParameter("password2");
-        if (username != null
+        if (name != null
+                && username != null
                 && email != null
                 && password1 != null
                 && password2 != null) {
@@ -82,7 +87,7 @@ public class RegisterServlet extends HttpServlet {
             if (password1.equals(password2)) {
                 request.setAttribute("PassError", null);
                 AccountDAO dao = new AccountDAO();
-                dao.register(username, email, password1);
+                dao.register(name,username, email, password1);
                 response.sendRedirect("login");
             } else {
                 request.setAttribute("PassError", "Incorrect Password");

@@ -151,9 +151,9 @@ public class AccountDAO {
         }
     }
 
-    public void register(String username, String email, String password) {
-        String sql = "INSERT INTO [Account] (Email, Username,Password,RoleAcc)"
-                + "  VALUES ('" + email + "','" + username + "','" + password + "','user')";
+    public void register(String name,String username, String email, String password) {
+        String sql = "INSERT INTO [Account] (Name, Email, Username,Password,RoleAcc)"
+                + "  VALUES (N'" + name + "','" + email + "','" + username + "','" + password + "','user')";
         try {
             Connection conn = new DBContext().getConnection();
             conn.prepareStatement(sql).execute();
@@ -167,7 +167,7 @@ public class AccountDAO {
 
         //check register
         AccountDAO dao = new AccountDAO();
-//        dao.register("bangpc@fpt.edu.vn", "bangpc@fpt.edu.vn", "ahihi123");
+        dao.register("bangoccho","bangpc@fpt.edu.vn", "bangpc@fpt.edu.vn", "ahihi123");
 //        check login
 //        AccountDAO dao = new AccountDAO();
 //        List<Account> list = dao.login("anhnt@fpt.edu.vn", "ahihi123");
