@@ -102,9 +102,9 @@ public class PostDAO {
 
     public boolean insert(post pt) throws Exception {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        String sql = "INSERT INTO Paper VALUES (N'"+pt.getHeader()+"',N'"+pt.getAcc()
-                +"',N'"+pt.getBody()+"','"+pt.getImg()+"','"+pt.getTypeId()+"','"
-                +format.format(pt.getDate())+"',"+pt.getStatus()+")";
+        String sql = "INSERT INTO Paper VALUES (N'" + pt.getHeader() + "',N'" + pt.getAcc()
+                + "',N'" + pt.getBody() + "','" + pt.getImg() + "','" + pt.getTypeId() + "','"
+                + format.format(pt.getDate()) + "'," + pt.getStatus() + ")";
         try {
             Connection conn = new DBContext().getConnection();
             conn.prepareCall(sql).execute();
@@ -129,60 +129,83 @@ public class PostDAO {
         }
     }
 
-    public String getNameComment(int userid){
+    public String getNameComment(int userid) {
         String name = "";
         String sql = "select name from account where userid=" + userid;
         try {
             Connection conn = new DBContext().getConnection();
             ResultSet rs = conn.prepareStatement(sql).executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 name = rs.getString("name");
             }
             rs.close();
             conn.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage() + "  --> postDAO.addcomment");
+            System.out.println(e.getMessage() + "  --> postDAO.getNameComment");
         }
         return name;
     }
-    
-    public int getCountCmt(int paperid){
+
+    public int getCountCmt(int paperid) {
         int count = -1;
         String sql = "select count(paperid) as[Count] from Comment where PaperID=" + paperid;
         try {
             Connection conn = new DBContext().getConnection();
             ResultSet rs = conn.prepareStatement(sql).executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 count = rs.getInt("Count");
             }
             rs.close();
             conn.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage() + "  --> postDAO.addcomment");
+            System.out.println(e.getMessage() + "  --> postDAO.getCountCmt");
         }
         return count;
     }
-    
-    public int getLike(int userid, int paperid){
+
+    public int getLike(int userid, int paperid) {
         int count = -1;
-        String sql = "Select COUNT(userid) as[like] from [like] where userid =" +  userid + "and PaperID =" + paperid;
+        String sql = "Select COUNT(userid) as[like] from [like] where userid =" + userid + "and PaperID =" + paperid;
         try {
             Connection conn = new DBContext().getConnection();
             ResultSet rs = conn.prepareStatement(sql).executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 count = rs.getInt("like");
             }
             rs.close();
             conn.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage() + "  --> postDAO.addcomment");
+            System.out.println(e.getMessage() + "  --> postDAO.getLike");
         }
         return count;
     }
-    
-    
+
+    public void deleteLike(int userid, int paperid) {
+        String sql = "Delete [like] where userid =" + userid + " and paperid = " + paperid;
+        try {
+            Connection conn = new DBContext().getConnection();
+            conn.prepareStatement(sql).execute();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.deleteLike");
+        }
+    }
+
+    public void addLike(int userid, int paperid) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        String sql = "Insert into [Like] values(" + userid + "," + paperid + ",'" + format.format(date) + "')";
+        try {
+            Connection conn = new DBContext().getConnection();
+            conn.prepareStatement(sql).execute();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.addLike");
+        }
+    }
+
     public List<Comment> getComment(int paperid) {
-        String sql = "Select * from Comment where paperid='"+ paperid + "'";
+        String sql = "Select * from Comment where paperid='" + paperid + "'";
         List<Comment> list = new ArrayList();
         try {
             Connection conn = new DBContext().getConnection();
@@ -212,7 +235,9 @@ public class PostDAO {
 //        }
 //        dao.insert(new post(1, "say hay", "ahihhi", "duy1.jpg", 1, new Date(), true, "daemon-lee"));
 
-        System.out.println(dao.getLike(1, 6));
+//        System.out.println(dao.getLike(1, 6));
+//        dao.deleteLike(1, 6);
+        dao.addLike(1, 6);
     }
 
 }

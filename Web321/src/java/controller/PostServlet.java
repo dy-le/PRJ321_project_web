@@ -42,8 +42,9 @@ public class PostServlet extends HttpServlet {
             PostDAO dao = new PostDAO();
             List<post> list = new ArrayList();
             list = dao.selectTop();
-            
+
             String like = "fa-heart-o";
+            String actlike = "";
             String id = request.getParameter("idPost");
             post pt = dao.select(id);
 
@@ -65,7 +66,17 @@ public class PostServlet extends HttpServlet {
                 //showlike
 
             }
-            
+
+            if (login!= null && request.getParameter("actlike") != null) {
+                actlike = request.getParameter("actlike");
+                if(dao.getLike(login.getUserID(), Integer.valueOf(id)) == 1 && actlike.equals("fa-heart-o")){
+                    dao.deleteLike(login.getUserID(), Integer.valueOf(id));
+                }
+                if(dao.getLike(login.getUserID(), Integer.valueOf(id)) == 0 && actlike.equals("fa-heart")){
+                    dao.addLike(login.getUserID(), Integer.valueOf(id));
+                }
+            }
+
             if (login != null) {
                 if (dao.getLike(login.getUserID(), Integer.valueOf(id)) == 1) {
                     like = "fa-heart";
