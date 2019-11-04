@@ -205,7 +205,7 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <a href=\"#\">Multipurpose</a>\r\n");
       out.write("                                    <a href=\"#\">Design</a>\r\n");
       out.write("                                    <a href=\"#\">");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${post.typeId.content}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${post.type.content}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</a>\r\n");
       out.write("                                </div>\r\n");
       out.write("\r\n");
@@ -226,6 +226,10 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <h4 class=\"mb-30\">2 Comments</h4>\r\n");
       out.write("\r\n");
       out.write("                                    <ol>\r\n");
+      out.write("                                        ");
+      if (_jspx_meth_c_forEach_1(_jspx_page_context))
+        return;
+      out.write("\r\n");
       out.write("                                        <!-- Single Comment Area -->\r\n");
       out.write("                                        <li class=\"single_comment_area\">\r\n");
       out.write("                                            <div class=\"comment-wrapper d-flex\">\r\n");
@@ -244,26 +248,26 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                    <a class=\"active\" href=\"#\">Reply</a>\r\n");
       out.write("                                                </div>\r\n");
       out.write("                                            </div>\r\n");
-      out.write("<!--                                            <ol class=\"children\">\r\n");
-      out.write("                                                <li class=\"single_comment_area\">\r\n");
-      out.write("                                                    <div class=\"comment-wrapper d-flex\">\r\n");
-      out.write("                                                         Comment Meta \r\n");
-      out.write("                                                        <div class=\"comment-author\">\r\n");
-      out.write("                                                            <img src=\"");
+      out.write("                                            <!--                                            <ol class=\"children\">\r\n");
+      out.write("                                                                                            <li class=\"single_comment_area\">\r\n");
+      out.write("                                                                                                <div class=\"comment-wrapper d-flex\">\r\n");
+      out.write("                                                                                                     Comment Meta \r\n");
+      out.write("                                                                                                    <div class=\"comment-author\">\r\n");
+      out.write("                                                                                                        <img src=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/yummy/img/blog-img/18.jpg\" alt=\"\">\r\n");
-      out.write("                                                        </div>\r\n");
-      out.write("                                                         Comment Content \r\n");
-      out.write("                                                        <div class=\"comment-content\">\r\n");
-      out.write("                                                            <span class=\"comment-date text-muted\">27 Aug 2018</span>\r\n");
-      out.write("                                                            <h5>Brandon Kelley</h5>\r\n");
-      out.write("                                                            <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>\r\n");
-      out.write("                                                            <a href=\"#\">Like</a>\r\n");
-      out.write("                                                            <a class=\"active\" href=\"#\">Reply</a>\r\n");
-      out.write("                                                        </div>\r\n");
-      out.write("                                                    </div>\r\n");
-      out.write("                                                </li>\r\n");
-      out.write("                                            </ol>-->\r\n");
+      out.write("                                                                                                    </div>\r\n");
+      out.write("                                                                                                     Comment Content \r\n");
+      out.write("                                                                                                    <div class=\"comment-content\">\r\n");
+      out.write("                                                                                                        <span class=\"comment-date text-muted\">27 Aug 2018</span>\r\n");
+      out.write("                                                                                                        <h5>Brandon Kelley</h5>\r\n");
+      out.write("                                                                                                        <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>\r\n");
+      out.write("                                                                                                        <a href=\"#\">Like</a>\r\n");
+      out.write("                                                                                                        <a class=\"active\" href=\"#\">Reply</a>\r\n");
+      out.write("                                                                                                    </div>\r\n");
+      out.write("                                                                                                </div>\r\n");
+      out.write("                                                                                            </li>\r\n");
+      out.write("                                                                                        </ol>-->\r\n");
       out.write("                                        </li>\r\n");
       out.write("                                        <li class=\"single_comment_area\">\r\n");
       out.write("                                            <div class=\"comment-wrapper d-flex\">\r\n");
@@ -292,7 +296,7 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                        <h4 class=\"mb-30\">Leave A Comment</h4>\r\n");
       out.write("\r\n");
       out.write("                                        <!-- Comment Form -->\r\n");
-      out.write("                                        <form action=\"post\">\r\n");
+      out.write("                                        <form action=\"post\" method=\"\">\r\n");
       out.write("                                            <!--                                            <div class=\"form-group\">\r\n");
       out.write("                                                                                            <input type=\"text\" class=\"form-control\" id=\"contact-name\" placeholder=\"Name\">\r\n");
       out.write("                                                                                        </div>\r\n");
@@ -439,6 +443,68 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspx_th_c_forEach_0.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_1.setParent(null);
+    _jspx_th_c_forEach_1.setVar("x");
+    _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${listComment}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int[] _jspx_push_body_count_c_forEach_1 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_forEach_1 = _jspx_th_c_forEach_1.doStartTag();
+      if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("                                            <li class=\"single_comment_area\">\r\n");
+          out.write("                                                <div class=\"comment-wrapper d-flex\">\r\n");
+          out.write("                                                    <!-- Comment Meta -->\r\n");
+          out.write("                                                    <div class=\"comment-author\">\r\n");
+          out.write("                                                        <img src=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("/media/img/");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${x.userid}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write(".jpg\" alt=\"\">\r\n");
+          out.write("                                                    </div>\r\n");
+          out.write("                                                    <!-- Comment Content -->\r\n");
+          out.write("                                                    <div class=\"comment-content\">\r\n");
+          out.write("                                                        <span class=\"comment-date text-muted\">");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${x.date}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</span>\r\n");
+          out.write("                                                        <h5>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${x.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</h5>\r\n");
+          out.write("                                                        <p>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${x.commentct}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</p>\r\n");
+          out.write("                                                        <a href=\"#\">Like</a>\r\n");
+          out.write("                                                        <a class=\"active\" href=\"#\">Reply</a>\r\n");
+          out.write("                                                    </div>\r\n");
+          out.write("                                                </div>\r\n");
+          out.write("                                            </li>\r\n");
+          out.write("                                        ");
+          int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_forEach_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_forEach_1[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_forEach_1.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_forEach_1.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_1);
     }
     return false;
   }

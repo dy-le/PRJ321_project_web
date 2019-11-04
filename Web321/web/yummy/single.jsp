@@ -114,7 +114,13 @@
                                                 </div>
                                                 <!-- Post Comments -->
                                                 <div class="post-comments">
-                                                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                                    <a onclick="focusMethod()" href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                                    <script>
+                                                        focusMethod = function getFocus() {
+                                                            document.getElementById("message").focus();
+//                                                            document.getElementById("myT")
+                                                        }
+                                                    </script>
                                                 </div>
                                                 <!-- Post Share -->
                                                 <div class="post-share">
@@ -138,7 +144,7 @@
 
                                 <!-- Related Post Area -->
                                 <div class="related-post-area section_padding_50">
-                                    <h4 class="mb-30">Related post</h4>
+                                    <h4 class="mb-30">Related post</h4> 
 
                                     <div class="related-post-slider owl-carousel">
                                         <c:forEach var="pt" items="${listpost}">
@@ -172,7 +178,7 @@
                                 </div>
 
                                 <!-- Comment Area Start -->
-                                <div class="comment_area section_padding_50 clearfix">
+                                <div class="comment_area section_padding_50 clearfix" >
                                     <h4 class="mb-30">2 Comments</h4>
 
                                     <ol>
@@ -255,15 +261,6 @@
 
                                         <!-- Comment Form -->
                                         <form action="post" method="">
-                                            <!--                                            <div class="form-group">
-                                                                                            <input type="text" class="form-control" id="contact-name" placeholder="Name">
-                                                                                        </div>
-                                                                                        <div class="form-group">
-                                                                                            <input type="email" class="form-control" id="contact-email" placeholder="Email">
-                                                                                        </div>
-                                                                                        <div class="form-group">
-                                                                                            <input type="text" class="form-control" id="contact-website" placeholder="Website">
-                                                                                        </div>-->
                                             <div class="form-group">
                                                 <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
                                             </div>
@@ -286,7 +283,6 @@
             </div>
         </section>
         <!-- ****** Single Blog Area End ****** -->
-
         <jsp:include page="footer.html"/>
 
         <!-- Jquery-2.2.4 js -->
