@@ -163,6 +163,23 @@ public class PostDAO {
         return count;
     }
     
+    public int getLike(int userid, int paperid){
+        int count = -1;
+        String sql = "Select COUNT(userid) as[like] from [like] where userid =" +  userid + "and PaperID =" + paperid;
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while(rs.next()){
+                count = rs.getInt("like");
+            }
+            rs.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.addcomment");
+        }
+        return count;
+    }
+    
     
     public List<Comment> getComment(int paperid) {
         String sql = "Select * from Comment where paperid='"+ paperid + "'";
@@ -195,7 +212,7 @@ public class PostDAO {
 //        }
 //        dao.insert(new post(1, "say hay", "ahihhi", "duy1.jpg", 1, new Date(), true, "daemon-lee"));
 
-        System.out.println(dao.getCountCmt(4));
+        System.out.println(dao.getLike(1, 6));
     }
 
 }
