@@ -146,6 +146,24 @@ public class PostDAO {
         return name;
     }
     
+    public int getCountCmt(int paperid){
+        int count = -1;
+        String sql = "select count(paperid) as[Count] from Comment where PaperID=" + paperid;
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while(rs.next()){
+                count = rs.getInt("Count");
+            }
+            rs.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.addcomment");
+        }
+        return count;
+    }
+    
+    
     public List<Comment> getComment(int paperid) {
         String sql = "Select * from Comment where paperid='"+ paperid + "'";
         List<Comment> list = new ArrayList();
@@ -176,6 +194,8 @@ public class PostDAO {
 //            System.out.println(x.getName());
 //        }
 //        dao.insert(new post(1, "say hay", "ahihhi", "duy1.jpg", 1, new Date(), true, "daemon-lee"));
+
+        System.out.println(dao.getCountCmt(4));
     }
 
 }

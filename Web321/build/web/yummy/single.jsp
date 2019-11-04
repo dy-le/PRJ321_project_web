@@ -114,7 +114,7 @@
                                                 </div>
                                                 <!-- Post Comments -->
                                                 <div class="post-comments">
-                                                    <a onclick="focusMethod()" href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                                    <a onclick="focusMethod()" href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> ${countCmt}</a>
                                                     <script>
                                                         focusMethod = function getFocus() {
                                                             document.getElementById("message").focus();

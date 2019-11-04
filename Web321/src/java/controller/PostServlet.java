@@ -7,6 +7,7 @@ package controller;
 
 import dao.PostDAO;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,14 +40,14 @@ public class PostServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         try {
             PostDAO dao = new PostDAO();
-            List<post> list = dao.selectTop();
+            List<post> list = new ArrayList();
+            list = dao.selectTop();
             
             String id = request.getParameter("idPost");
             post pt = dao.select(id);
 
             request.setAttribute("post", pt);
             request.setAttribute("listpost", list);
-            
             
             
             
@@ -65,7 +66,10 @@ public class PostServlet extends HttpServlet {
             
             if(id != null){
                 request.setAttribute("listComment", dao.getComment(Integer.valueOf(id)));
+                request.setAttribute("countCmt", dao.getCountCmt(Integer.valueOf(id)));
             }
+            System.out.println("======countCmt:  " + dao.getCountCmt(Integer.valueOf(id)));
+            System.out.println("======idPost:  " + Integer.valueOf(id));
             
             RequestDispatcher rd = request.getRequestDispatcher("yummy/single.jsp");
             rd.forward(request, response);

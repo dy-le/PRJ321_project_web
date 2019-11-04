@@ -181,7 +181,13 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                                </div>\r\n");
       out.write("                                                <!-- Post Comments -->\r\n");
       out.write("                                                <div class=\"post-comments\">\r\n");
-      out.write("                                                    <a href=\"#\"><i class=\"fa fa-comment-o\" aria-hidden=\"true\"></i> 12</a>\r\n");
+      out.write("                                                    <a onclick=\"focusMethod()\" href=\"#\"><i class=\"fa fa-comment-o\" aria-hidden=\"true\"></i> 12</a>\r\n");
+      out.write("                                                    <script>\r\n");
+      out.write("                                                        focusMethod = function getFocus() {\r\n");
+      out.write("                                                            document.getElementById(\"message\").focus();\r\n");
+      out.write("//                                                            document.getElementById(\"myT\")\r\n");
+      out.write("                                                        }\r\n");
+      out.write("                                                    </script>\r\n");
       out.write("                                                </div>\r\n");
       out.write("                                                <!-- Post Share -->\r\n");
       out.write("                                                <div class=\"post-share\">\r\n");
@@ -211,7 +217,7 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                                <!-- Related Post Area -->\r\n");
       out.write("                                <div class=\"related-post-area section_padding_50\">\r\n");
-      out.write("                                    <h4 class=\"mb-30\">Related post</h4>\r\n");
+      out.write("                                    <h4 class=\"mb-30\">Related post</h4> \r\n");
       out.write("\r\n");
       out.write("                                    <div class=\"related-post-slider owl-carousel\">\r\n");
       out.write("                                        ");
@@ -222,7 +228,7 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                </div>\r\n");
       out.write("\r\n");
       out.write("                                <!-- Comment Area Start -->\r\n");
-      out.write("                                <div class=\"comment_area section_padding_50 clearfix\">\r\n");
+      out.write("                                <div class=\"comment_area section_padding_50 clearfix\" >\r\n");
       out.write("                                    <h4 class=\"mb-30\">2 Comments</h4>\r\n");
       out.write("\r\n");
       out.write("                                    <ol>\r\n");
@@ -297,15 +303,6 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                                        <!-- Comment Form -->\r\n");
       out.write("                                        <form action=\"post\" method=\"\">\r\n");
-      out.write("                                            <!--                                            <div class=\"form-group\">\r\n");
-      out.write("                                                                                            <input type=\"text\" class=\"form-control\" id=\"contact-name\" placeholder=\"Name\">\r\n");
-      out.write("                                                                                        </div>\r\n");
-      out.write("                                                                                        <div class=\"form-group\">\r\n");
-      out.write("                                                                                            <input type=\"email\" class=\"form-control\" id=\"contact-email\" placeholder=\"Email\">\r\n");
-      out.write("                                                                                        </div>\r\n");
-      out.write("                                                                                        <div class=\"form-group\">\r\n");
-      out.write("                                                                                            <input type=\"text\" class=\"form-control\" id=\"contact-website\" placeholder=\"Website\">\r\n");
-      out.write("                                                                                        </div>-->\r\n");
       out.write("                                            <div class=\"form-group\">\r\n");
       out.write("                                                <textarea class=\"form-control\" name=\"message\" id=\"message\" cols=\"30\" rows=\"10\" placeholder=\"Message\"></textarea>\r\n");
       out.write("                                            </div>\r\n");
@@ -329,7 +326,6 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\r\n");
       out.write("        </section>\r\n");
       out.write("        <!-- ****** Single Blog Area End ****** -->\r\n");
-      out.write("\r\n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "footer.html", out, false);
       out.write("\r\n");
