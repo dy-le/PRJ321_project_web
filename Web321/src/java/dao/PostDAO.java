@@ -6,7 +6,9 @@
 package dao;
 
 import context.DBContext;
+import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -226,6 +228,53 @@ public class PostDAO {
         return list;
     }
 
+    public List<post> getPost(int page, int size) throws Exception {
+        int from = (page - 1) * size + 1;
+        int to = size * page;
+        String sql = "SELECT * FROM (SELECT ROW_NUMBER() OVER(ORDER BY Date DESC) AS Row#,* FROM Paper) x WHERE x.Row# BETWEEN " + from + " AND " + to;
+
+        List<post> list = new ArrayList<>();
+
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("PaperID");
+                String title = rs.getString("Title");
+                String author = rs.getString("Author");
+                String body = rs.getString("Body");
+                String img = rs.getString("Img");
+                int typeID = rs.getInt("TypeID");
+                Date date = rs.getDate("Date");
+                boolean Status = rs.getBoolean("Status");
+                list.add(new post(id, title, body, img, typeID, date, Status, author));
+            }
+            rs.close();
+            conn.close();
+            return list;
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.getPost");
+        }
+        return list;
+
+    }
+
+    public int getPages(int size) throws Exception {
+        String sql = "select count(*) from Paper";
+        Connection conn = new DBContext().getConnection();
+        ResultSet rs = conn.prepareStatement(sql).executeQuery();
+        int rows = 0;
+        if (rs.next()) {
+            rows = rs.getInt(1);
+        }
+        int pages = rows / size;
+        int du = rows % size;
+        if (du > 0) {
+            pages++;
+        }//Math.ceil(a / 100)
+        return (rows < size ? 1 : pages);
+    }
+
     public static void main(String[] args) throws Exception {
         PostDAO dao = new PostDAO();
 //        dao.addcomment(1, 1, "111111: hôm nay tôi buồn ahihi");
@@ -237,7 +286,8 @@ public class PostDAO {
 
 //        System.out.println(dao.getLike(1, 6));
 //        dao.deleteLike(1, 6);
-        dao.addLike(1, 6);
+//        dao.addLike(1, 6);
+        dao.getPost(1, 5);
     }
 
 }

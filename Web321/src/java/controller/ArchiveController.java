@@ -38,7 +38,19 @@ public class ArchiveController extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             PostDAO dao = new PostDAO();
             List<post> list = dao.select();
-//            response.sendRedirect("yummy/index_1.jsp");
+            int size = 6;
+            int page = 1;
+            if (request.getParameter("size") != null) {
+                size = Integer.valueOf(request.getParameter("size"));
+                request.setAttribute("pages", dao.getPages(size));
+            } else {
+                request.setAttribute("pages", dao.getPages(size));
+            }
+            if (request.getParameter("page") != null) {
+                page = Integer.valueOf(request.getParameter("page"));
+            }
+
+            list = dao.getPost(page, size);
             request.setAttribute("listpost", list);
             RequestDispatcher rd = request.getRequestDispatcher("yummy/archive.jsp");
             rd.forward(request, response);

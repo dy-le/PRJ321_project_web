@@ -118,22 +118,33 @@
                         <div class="pagination-area d-sm-flex mt-15">
                             <nav aria-label="#">
                                 <ul class="pagination">
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <c:forEach var="i" begin="1" end="${pages}" step="1">
+                                            <c:url var="next" value="archive">
+                                                <c:param name="page" value="${i}"/>
+                                                <c:param name="size" value="${param.size==null?6:param.size}"/>
+                                            </c:url>
+                                            <li class="page-item ${i == param.page?"active":""}"><a class="page-link" href="${next}">${i} ${i == param.page?"<span class=\"sr-only\">(current)</span>":""}</a></li>
+                                        </c:forEach>
                                     <li class="page-item">
                                         <a class="page-link" href="#">Next <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                                     </li>
                                 </ul>
                             </nav>
-                            <div class="page-status">
-                                <p>Page 1 of 60 results</p>
-                            </div>
+                            <!--<div class="page-status">-->
+                            <form action="archive">
+                                <div class="page-status">
+                                    <select name="size" onchange="document.forms[0].submit()">
+                                        <c:forEach var="i" begin="6" end="18" step="6">
+                                            <option value="${i}" ${i == param.size?"selected":""}>
+                                                ${i}</option>
+                                            </c:forEach>
+                                    </select>
+                                    <!--<p>Page 1 of 60 results</p>-->
+                                </div>
+                            </form>
+
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
