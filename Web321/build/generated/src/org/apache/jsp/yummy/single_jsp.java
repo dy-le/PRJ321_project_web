@@ -12,6 +12,7 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -21,10 +22,12 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspInit() {
     _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_c_forEach_var_items.release();
+    _jspx_tagPool_c_if_test.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -177,11 +180,30 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                            <div class=\"post-comment-share-area d-flex\">\r\n");
       out.write("                                                <!-- Post Favourite -->\r\n");
       out.write("                                                <div class=\"post-favourite\">\r\n");
-      out.write("                                                    <a href=\"#\"><i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> 10</a>\r\n");
+      out.write("                                                    <!--<a href=\"#\"><i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> 10</a>-->\r\n");
+      out.write("                                                    ");
+      if (_jspx_meth_c_if_0(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("                                                        \r\n");
+      out.write("                                                    ");
+      if (_jspx_meth_c_if_1(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("                                                </div>\r\n");
       out.write("                                                <!-- Post Comments -->\r\n");
       out.write("                                                <div class=\"post-comments\">\r\n");
-      out.write("                                                    <a href=\"#\"><i class=\"fa fa-comment-o\" aria-hidden=\"true\"></i> 12</a>\r\n");
+      out.write("                                                    <a onclick=\"focusMethod()\" href=\"#\"><i class=\"fa fa-comment-o\" aria-hidden=\"true\"></i> ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${countCmt}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</a>\r\n");
+      out.write("                                                    <script>\r\n");
+      out.write("                                                        focusMethod = function getFocus() {\r\n");
+      out.write("                                                            document.getElementById(\"message\").focus();\r\n");
+      out.write("//                                                            document.getElementById(\"myT\")\r\n");
+      out.write("                                                        }\r\n");
+      out.write("                                                    </script>\r\n");
       out.write("                                                </div>\r\n");
       out.write("                                                <!-- Post Share -->\r\n");
       out.write("                                                <div class=\"post-share\">\r\n");
@@ -211,7 +233,7 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                                <!-- Related Post Area -->\r\n");
       out.write("                                <div class=\"related-post-area section_padding_50\">\r\n");
-      out.write("                                    <h4 class=\"mb-30\">Related post</h4>\r\n");
+      out.write("                                    <h4 class=\"mb-30\">Related post</h4> \r\n");
       out.write("\r\n");
       out.write("                                    <div class=\"related-post-slider owl-carousel\">\r\n");
       out.write("                                        ");
@@ -222,7 +244,7 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                </div>\r\n");
       out.write("\r\n");
       out.write("                                <!-- Comment Area Start -->\r\n");
-      out.write("                                <div class=\"comment_area section_padding_50 clearfix\">\r\n");
+      out.write("                                <div class=\"comment_area section_padding_50 clearfix\" >\r\n");
       out.write("                                    <h4 class=\"mb-30\">2 Comments</h4>\r\n");
       out.write("\r\n");
       out.write("                                    <ol>\r\n");
@@ -297,15 +319,6 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                                        <!-- Comment Form -->\r\n");
       out.write("                                        <form action=\"post\" method=\"\">\r\n");
-      out.write("                                            <!--                                            <div class=\"form-group\">\r\n");
-      out.write("                                                                                            <input type=\"text\" class=\"form-control\" id=\"contact-name\" placeholder=\"Name\">\r\n");
-      out.write("                                                                                        </div>\r\n");
-      out.write("                                                                                        <div class=\"form-group\">\r\n");
-      out.write("                                                                                            <input type=\"email\" class=\"form-control\" id=\"contact-email\" placeholder=\"Email\">\r\n");
-      out.write("                                                                                        </div>\r\n");
-      out.write("                                                                                        <div class=\"form-group\">\r\n");
-      out.write("                                                                                            <input type=\"text\" class=\"form-control\" id=\"contact-website\" placeholder=\"Website\">\r\n");
-      out.write("                                                                                        </div>-->\r\n");
       out.write("                                            <div class=\"form-group\">\r\n");
       out.write("                                                <textarea class=\"form-control\" name=\"message\" id=\"message\" cols=\"30\" rows=\"10\" placeholder=\"Message\"></textarea>\r\n");
       out.write("                                            </div>\r\n");
@@ -329,7 +342,6 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\r\n");
       out.write("        </section>\r\n");
       out.write("        <!-- ****** Single Blog Area End ****** -->\r\n");
-      out.write("\r\n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "footer.html", out, false);
       out.write("\r\n");
@@ -368,6 +380,68 @@ public final class single_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_c_if_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_0.setParent(null);
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${not empty idPost}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+    if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                                                        <a onclick=\"window.location.href='post?idPost=");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.idPost}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("&actlike=fa-heart-o'\" href=\"post?idPost=");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.idPost}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("&actlike=fa-heart-o\"><h4 class=\"fa ");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.actlike}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("\" aria-hidden=\"true\"></h4> 10</a>\r\n");
+        out.write("                                                    ");
+        int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_1.setParent(null);
+    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${empty idPost}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
+    if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                                                        <a href=\"#\"><h4 class=\"fa fa-heart-o\" aria-hidden=\"true\"></h4> 10</a>\r\n");
+        out.write("                                                    ");
+        int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+    return false;
   }
 
   private boolean _jspx_meth_c_forEach_0(PageContext _jspx_page_context)

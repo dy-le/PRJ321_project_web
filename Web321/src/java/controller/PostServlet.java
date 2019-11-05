@@ -7,6 +7,7 @@ package controller;
 
 import dao.PostDAO;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,17 +40,17 @@ public class PostServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         try {
             PostDAO dao = new PostDAO();
-            List<post> list = dao.selectTop();
-            
+            List<post> list = new ArrayList();
+            list = dao.selectTop();
+
+            String like = "fa-heart-o";
+            String actlike = "";
             String id = request.getParameter("idPost");
             post pt = dao.select(id);
 
             request.setAttribute("post", pt);
             request.setAttribute("listpost", list);
-            
-            
-            
-            
+
             HttpSession session = request.getSession(false);
             Account login = (Account) session.getAttribute("login");
             if (login != null
@@ -60,13 +61,37 @@ public class PostServlet extends HttpServlet {
                 String commentct = request.getParameter("message");
                 System.out.println("userid: " + userid);
                 System.out.println("commentct: " + commentct);
+                //addcomment
                 dao.addcomment(userid, paperid, commentct);
+                //showlike
+
             }
-            
-            if(id != null){
+
+            if (login!= null && request.getParameter("actlike") != null) {
+                actlike = request.getParameter("actlike");
+                if(dao.getLike(login.getUserID(), Integer.valueOf(id)) == 1 && actlike.equals("fa-heart-o")){
+                    dao.deleteLike(login.getUserID(), Integer.valueOf(id));
+                }
+                if(dao.getLike(login.getUserID(), Integer.valueOf(id)) == 0 && actlike.equals("fa-heart")){
+                    dao.addLike(login.getUserID(), Integer.valueOf(id));
+                }
+            }
+
+            if (login != null) {
+                if (dao.getLike(login.getUserID(), Integer.valueOf(id)) == 1) {
+                    like = "fa-heart";
+                    System.out.println("111111like: " + like);
+                }
+            }
+
+            if (id != null) {
                 request.setAttribute("listComment", dao.getComment(Integer.valueOf(id)));
+                request.setAttribute("countCmt", dao.getCountCmt(Integer.valueOf(id)));
+                request.setAttribute("like", like);
             }
-            
+            System.out.println("======countCmt:  " + dao.getCountCmt(Integer.valueOf(id)));
+            System.out.println("======idPost:  " + Integer.valueOf(id));
+
             RequestDispatcher rd = request.getRequestDispatcher("yummy/single.jsp");
             rd.forward(request, response);
         } catch (Exception Ex) {
