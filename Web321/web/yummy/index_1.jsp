@@ -300,8 +300,7 @@
                         </div>
                     </div>
                     <jsp:include page="status.jsp" flush="true">
-                        <jsp:param name="account" value="Daemon Lee"/>
-                        <jsp:param name="id" value="18"/>
+                        <jsp:param name="populerPost" value="${populerPost}"/>
                     </jsp:include>
                 </div>
             </div>
