@@ -48,6 +48,60 @@ public class PostDAO {
         return pt;
     }
 
+    public List<post> getPostByTypeID(int idtype) throws Exception {
+        List<post> list = new ArrayList<>();
+        String sql = "select * from Paper where TypeID=" + idtype;
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("PaperID");
+                String title = rs.getString("Title");
+                String author = rs.getString("Author");
+                String body = rs.getString("Body");
+                String img = rs.getString("Img");
+                int typeID = rs.getInt("TypeID");
+                Date date = rs.getDate("Date");
+                boolean Status = rs.getBoolean("Status");
+                list.add(new post(id, title, body, img, typeID, date, Status, author));
+            }
+            rs.close();
+            conn.close();
+            return list;
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.getPostByTypeID");
+        }
+        return list;
+    }
+    
+    public List<post> getPopulerPost() throws Exception {
+        List<post> list = new ArrayList<>();
+        String sql = "SELECT TOP (5) pa.*, cl.dol FROM [Paper] pa, (SELECT COUNT([PaperID]) as dol, "
+        	+ "[PaperID] FROM [like] GROUP BY [PaperID]) cl WHERE pa.PaperID = cl.PaperID "
+        	+ "ORDER BY cl.dol DESC ";
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("PaperID");
+                String title = rs.getString("Title");
+                String author = rs.getString("Author");
+                String body = rs.getString("Body");
+                String img = rs.getString("Img");
+                int typeID = rs.getInt("TypeID");
+                Date date = rs.getDate("Date");
+                boolean Status = rs.getBoolean("Status");
+                list.add(new post(id, title, body, img, typeID, date, Status, author));
+            }
+            rs.close();
+            conn.close();
+            return list;
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.getPostByTypeID");
+        }
+        return list;
+    }
+
     public List<post> select() throws Exception {
         post pt = new post();
         List<post> list = new ArrayList<>();
@@ -121,7 +175,8 @@ public class PostDAO {
     public void addcomment(int userid, int paperid, String commentCt) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
-        String sql = "Insert into Comment values (" + userid + "," + paperid + ",N'" + commentCt + "','" + format.format(date) + "')";
+        String sql = "Insert into Comment values (" + userid + "," + paperid + ",N'" 
+        	+ commentCt + "','" + format.format(date) + "')";
         try {
             Connection conn = new DBContext().getConnection();
             conn.prepareCall(sql).execute();
@@ -167,7 +222,8 @@ public class PostDAO {
 
     public int getLike(int userid, int paperid) {
         int count = -1;
-        String sql = "Select COUNT(userid) as[like] from [like] where userid =" + userid + "and PaperID =" + paperid;
+        String sql = "Select COUNT(userid) as[like] from [like] where userid =" + userid 
+        	+ "and PaperID =" + paperid;
         try {
             Connection conn = new DBContext().getConnection();
             ResultSet rs = conn.prepareStatement(sql).executeQuery();

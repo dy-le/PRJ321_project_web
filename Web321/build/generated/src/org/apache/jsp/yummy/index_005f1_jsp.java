@@ -319,7 +319,7 @@ static {
       out.write("                                            <div class=\"post-comment-share-area d-flex\">\r\n");
       out.write("                                                <!-- Post Favourite -->\r\n");
       out.write("                                                <div class=\"post-favourite\">\r\n");
-      out.write("                                                    <a onclick=\"focusMethod()\"><i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> 10</a>\r\n");
+      out.write("                                                    <a href=\"#\"><i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i> 10</a>\r\n");
       out.write("                                                </div>\r\n");
       out.write("                                                <!-- Post Comments -->\r\n");
       out.write("                                                <div class=\"post-comments\">\r\n");
