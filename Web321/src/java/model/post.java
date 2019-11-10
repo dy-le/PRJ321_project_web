@@ -5,7 +5,7 @@
  */
 package model;
 
-import dao.AccountDAO;
+import dao.PostDAO;
 import dao.typeDAO;
 import java.util.Date;
 
@@ -14,22 +14,23 @@ import java.util.Date;
  * @author lpxed
  */
 public class post {
+
     int id;
     String header;
     String body;
     String img;
-    
+
     int like;
-    
+
     String acc;
     int typeId;
     Date date;
     boolean status;
-    
+
     public post() {
     }
 
-    public post(int id, String header, String body, String img, int typeId, Date date, boolean status ,String accName) throws Exception {
+    public post(int id, String header, String body, String img, int typeId, Date date, boolean status, String accName) throws Exception {
         this.id = id;
         this.header = header;
         this.body = body;
@@ -52,7 +53,6 @@ public class post {
 //        this.date = date;
 //        this.status = status;
 //    }
-
     public int getId() {
         return id;
     }
@@ -128,12 +128,12 @@ public class post {
     }
 
     public int getStatus() {
-        if(isStatus()){
+        if (isStatus()) {
             return 1;
         }
         return 0;
     }
-    
+
     public void setStatus(boolean status) {
         this.status = status;
     }
@@ -143,5 +143,13 @@ public class post {
         return "post{" + "id=" + id + ", header=" + header + ", body=" + body + ", img=" + img + ", like=" + like + ", acc=" + acc + ", typeId=" + typeId + ", date=" + date + ", status=" + status + '}';
     }
 
-    
-}    
+    public int getCountcmt() {
+        PostDAO dao = new PostDAO();
+        return dao.getCountCmt(getId());
+    }
+
+    public int getCountlike() {
+        PostDAO dao = new PostDAO();
+        return dao.getCountLike(getId());
+    }
+}

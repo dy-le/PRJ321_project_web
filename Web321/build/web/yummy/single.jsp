@@ -114,13 +114,12 @@
                                                     <c:if test="${not empty param.idPost}">
                                                         <c:if test="${not empty like}">
                                                             <c:if test="${like == 'fa-heart-o'}">
-                                                                <a onclick="window.location.href = 'post?idPost=${param.idPost}&actlike=fa-heart'" href="#"><h4 class="fa fa-heart-o" aria-hidden="true"></h4> 10</a>
+                                                                <a onclick="window.location.href = 'post?idPost=${param.idPost}&actlike=fa-heart'" href="#"><h4 class="fa fa-heart-o" aria-hidden="true"></h4> ${post.countlike}</a>
                                                             </c:if>
                                                             <c:if test="${like == 'fa-heart'}">
-                                                                <a onclick="window.location.href = 'post?idPost=${param.idPost}&actlike=fa-heart-o'" href="#"><h4 class="fa fa-heart" aria-hidden="true"></h4> 10</a>
+                                                                <a onclick="window.location.href = 'post?idPost=${param.idPost}&actlike=fa-heart-o'" href="#"><h4 class="fa fa-heart" aria-hidden="true"></h4> ${post.countlike}</a>
                                                             </c:if>
                                                         </c:if>
-
                                                     </c:if>
 
                                                     <c:if test="${empty param.idPost}">
@@ -200,9 +199,10 @@
 
                                 <!-- Comment Area Start -->
                                 <div class="comment_area section_padding_50 clearfix" >
-                                    <h4 class="mb-30">2 Comments</h4>
+                                    <h4 class="mb-30">${listComment.size()} Comments</h4>
 
                                     <ol>
+                                        <!-- Single Comment Area -->
                                         <c:forEach var="x" items="${listComment}">
                                             <li class="single_comment_area">
                                                 <div class="comment-wrapper d-flex">
@@ -221,39 +221,6 @@
                                                 </div>
                                             </li>
                                         </c:forEach>
-                                        <!-- Single Comment Area -->
-                                        <li class="single_comment_area">
-                                            <div class="comment-wrapper d-flex">
-                                                <!-- Comment Meta -->
-                                                <div class="comment-author">
-                                                    <img src="${pageContext.request.contextPath}/yummy/img/blog-img/17.jpg" alt="">
-                                                </div>
-                                                <!-- Comment Content -->
-                                                <div class="comment-content">
-                                                    <span class="comment-date text-muted">27 Aug 2018</span>
-                                                    <h5>Brandon Kelley</h5>
-                                                    <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
-                                                    <a href="#">Like</a>
-                                                    <a class="active" href="#">Reply</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="single_comment_area">
-                                            <div class="comment-wrapper d-flex">
-                                                <!-- Comment Meta -->
-                                                <div class="comment-author">
-                                                    <img src="${pageContext.request.contextPath}/yummy/img/blog-img/19.jpg" alt="">
-                                                </div>
-                                                <!-- Comment Content -->
-                                                <div class="comment-content">
-                                                    <span class="comment-date text-muted">27 Aug 2018</span>
-                                                    <h5>Brandon Kelley</h5>
-                                                    <p>Neque porro qui squam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
-                                                    <a href="#">Like</a>
-                                                    <a class="active" href="#">Reply</a>
-                                                </div>
-                                            </div>
-                                        </li>
                                     </ol>
                                 </div>
 

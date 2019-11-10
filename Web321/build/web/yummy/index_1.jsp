@@ -42,103 +42,22 @@
         <!-- ****** Welcome Post Area Start ****** -->
         <div class="welcome-post-sliders owl-carousel">
             <!-- Single Slide -->
-            <div class="welcome-single-slide">
-                <!-- Post Thumb -->
-                <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-1.jpg" alt="">
-                <!-- Overlay Text -->
-                <div class="project_title">
-                    <div class="post-date-commnents d-flex">
-                        <a href="#">May 19, 2017</a>
-                        <a href="#">5 Comment</a>
-                    </div>
-                    <a href="#">
-                        <h5>“I’ve Come and I’m Gone”: A Tribute to Istanbul’s Street</h5>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Single Slide -->
-            <div class="welcome-single-slide">
-                <!-- Post Thumb -->
-                <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-2.jpg" alt="">
-                <!-- Overlay Text -->
-                <div class="project_title">
-                    <div class="post-date-commnents d-flex">
-                        <a href="#">May 19, 2017</a>
-                        <a href="#">5 Comment</a>
-                    </div>
-                    <a href="#">
-                        <h5>“I’ve Come and I’m Gone”: A Tribute to Istanbul’s Street</h5>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Single Slide -->
-            <div class="welcome-single-slide">
-                <!-- Post Thumb -->
-                <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-1.jpg" alt="">
-                <!-- Overlay Text -->
-                <div class="project_title">
-                    <div class="post-date-commnents d-flex">
-                        <a href="#">May 19, 2017</a>
-                        <a href="#">5 Comment</a>
-                    </div>
-                    <a href="#">
-                        <h5>“I’ve Come and I’m Gone”: A Tribute to Istanbul’s Street</h5>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Single Slide -->
-            <div class="welcome-single-slide">
-                <!-- Post Thumb -->
-                <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-3.jpg" alt="">
-                <!-- Overlay Text -->
-                <div class="project_title">
-                    <div class="post-date-commnents d-flex">
-                        <a href="#">May 19, 2017</a>
-                        <a href="#">5 Comment</a>
-                    </div>
-                    <a href="#">
-                        <h5>“I’ve Come and I’m Gone”: A Tribute to Istanbul’s Street</h5>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Single Slide -->
-            <div class="welcome-single-slide">
-                <!-- Post Thumb -->
-                <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-4.jpg" alt="">
-                <!-- Overlay Text -->
-                <div class="project_title">
-                    <div class="post-date-commnents d-flex">
-                        <a href="#">May 19, 2017</a>
-                        <a href="#">5 Comment</a>
-                    </div>
-                    <a href="#">
-                        <h5>“I’ve Come and I’m Gone”: A Tribute to Istanbul’s Street</h5>
-                    </a>
-                </div>
-            </div>
-            <c:forEach var="i" begin="1" end="5">
-                <!-- Single Slide -->
+            <c:forEach var="x" items="${listpost}">
                 <div class="welcome-single-slide">
                     <!-- Post Thumb -->
-                    <img src="${pageContext.request.contextPath}/yummy/img/bg-img/slide-4.jpg" alt="">
+                    <img src="${pageContext.request.contextPath}/yummy/img/bg-img/${x.id}.jpg" alt="">
                     <!-- Overlay Text -->
                     <div class="project_title">
                         <div class="post-date-commnents d-flex">
-                            <a href="#">May 19, 2017</a>
-                            <a href="#">5 Comment</a>
+                            <a href="#">${x.date}</a>
+                            <a href="#">${x.countcmt} comment</a>
                         </div>
-                        <a href="#">
-                            <h5>“I’ve Come </h5>
+                        <a href="${pageContext.request.contextPath}/post?idPost=${x.id}">
+                            <h5>${x.header}</h5>
                         </a>
                     </div>
                 </div>
             </c:forEach>
-
-
         </div>
         <!-- ****** Welcome Area End ****** -->
         <!-- ****** Categories Area Start ****** -->
@@ -232,11 +151,11 @@
                                             <div class="post-comment-share-area d-flex">
                                                 <!-- Post Favourite -->
                                                 <div class="post-favourite">
-                                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
+                                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> ${first.countlike}</a>
                                                 </div>
                                                 <!-- Post Comments -->
                                                 <div class="post-comments">
-                                                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> ${first.countcmt}</a>
                                                 </div>
                                                 <!-- Post Share -->
                                                 <div class="post-share">
@@ -277,11 +196,11 @@
                                                 <div class="post-comment-share-area d-flex">
                                                     <!-- Post Favourite -->
                                                     <div class="post-favourite">
-                                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
+                                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> ${post.countlike}</a>
                                                     </div>
                                                     <!-- Post Comments -->
                                                     <div class="post-comments">
-                                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> ${post.countcmt}</a>
                                                     </div>
                                                     <!-- Post Share -->
                                                     <div class="post-share">

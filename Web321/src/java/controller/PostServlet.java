@@ -50,7 +50,7 @@ public class PostServlet extends HttpServlet {
 
             request.setAttribute("post", pt);
             request.setAttribute("listpost", list);
-
+            
             HttpSession session = request.getSession(false);
             Account login = (Account) session.getAttribute("login");
             if (login != null

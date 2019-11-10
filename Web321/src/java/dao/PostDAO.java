@@ -73,12 +73,12 @@ public class PostDAO {
         }
         return list;
     }
-    
+
     public List<post> getPopulerPost() throws Exception {
         List<post> list = new ArrayList<>();
         String sql = "SELECT TOP (5) pa.*, cl.dol FROM [Paper] pa, (SELECT COUNT([PaperID]) as dol, "
-        	+ "[PaperID] FROM [like] GROUP BY [PaperID]) cl WHERE pa.PaperID = cl.PaperID "
-        	+ "ORDER BY cl.dol DESC ";
+                + "[PaperID] FROM [like] GROUP BY [PaperID]) cl WHERE pa.PaperID = cl.PaperID "
+                + "ORDER BY cl.dol DESC ";
         try {
             Connection conn = new DBContext().getConnection();
             ResultSet rs = conn.prepareStatement(sql).executeQuery();
@@ -175,8 +175,8 @@ public class PostDAO {
     public void addcomment(int userid, int paperid, String commentCt) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
-        String sql = "Insert into Comment values (" + userid + "," + paperid + ",N'" 
-        	+ commentCt + "','" + format.format(date) + "')";
+        String sql = "Insert into Comment values (" + userid + "," + paperid + ",N'"
+                + commentCt + "','" + format.format(date) + "')";
         try {
             Connection conn = new DBContext().getConnection();
             conn.prepareCall(sql).execute();
@@ -220,10 +220,27 @@ public class PostDAO {
         return count;
     }
 
+    public int getCountLike(int paperid) {
+        int count = -1;
+        String sql = "select count(paperid) as[Count] from [Like] where PaperID=" + paperid;
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while (rs.next()) {
+                count = rs.getInt("Count");
+            }
+            rs.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.getCountLike");
+        }
+        return count;
+    }
+
     public int getLike(int userid, int paperid) {
         int count = -1;
-        String sql = "Select COUNT(userid) as[like] from [like] where userid =" + userid 
-        	+ "and PaperID =" + paperid;
+        String sql = "Select COUNT(userid) as[like] from [like] where userid =" + userid
+                + "and PaperID =" + paperid;
         try {
             Connection conn = new DBContext().getConnection();
             ResultSet rs = conn.prepareStatement(sql).executeQuery();
@@ -343,7 +360,8 @@ public class PostDAO {
 //        System.out.println(dao.getLike(1, 6));
 //        dao.deleteLike(1, 6);
 //        dao.addLike(1, 6);
-        dao.getPost(1, 5);
+//        dao.getPost(1, 5);
+        System.out.println(dao.getCountLike(11));
     }
 
 }
