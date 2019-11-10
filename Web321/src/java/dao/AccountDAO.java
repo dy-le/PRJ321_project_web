@@ -151,7 +151,7 @@ public class AccountDAO {
         }
     }
 
-    public void register(String name,String username, String email, String password) {
+    public void register(String name, String username, String email, String password) {
         String sql = "INSERT INTO [Account] (Name, Email, Username,Password,RoleAcc)"
                 + "  VALUES (N'" + name + "','" + email + "','" + username + "','" + password + "','user')";
         try {
@@ -163,11 +163,29 @@ public class AccountDAO {
         }
     }
 
+    public List<String> getListAuthor() throws Exception {
+        List<String> list = new ArrayList<>();
+        String sql = "select distinct(Name) from Account";
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while (rs.next()) {
+                list.add(rs.getString("name"));
+            }
+            rs.close();
+            conn.close();
+            return list;
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.getListAuthor");
+        }
+        return list;
+    }
+
     public static void main(String[] args) throws Exception {
 
         //check register
         AccountDAO dao = new AccountDAO();
-        dao.register("bangoccho","bangpc@fpt.edu.vn", "bangpc@fpt.edu.vn", "ahihi123");
+//        dao.register("bangoccho", "bangpc@fpt.edu.vn", "bangpc@fpt.edu.vn", "ahihi123");
 //        check login
 //        AccountDAO dao = new AccountDAO();
 //        List<Account> list = dao.login("anhnt@fpt.edu.vn", "ahihi123");
@@ -179,5 +197,6 @@ public class AccountDAO {
 //        }
 //        Account list = dao.select(1);
 //        System.out.println(list.getName());
+//        System.out.println(dao.select().get(2).getName());
     }
 }

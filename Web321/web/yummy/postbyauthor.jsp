@@ -71,56 +71,20 @@
             <div class="container">
                 <h2>type</h2>
                 <div class="row">
-                    <div class="col-12 col-md-4 col-lg-2">
-                        <div class="single_catagory">
-                            <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/1.jpg" alt="">
-                            <div class="catagory-title">
-                                <a href="${pageContext.request.contextPath}/singletype?type=1">
-                                    <h5>News</h5>
-                                </a>
+                    <c:if test="${not empty authors}">
+                        <c:forEach var="x" items="${authors}">
+                            <div class="col-12 col-md-4 col-lg-2">
+                                <div class="single_catagory">
+                                    <img style="width: 200px; height: 150px" src="${pageContext.request.contextPath}/media/img/${x.userID}.jpg" alt="">
+                                    <div class="catagory-title">
+                                        <a href="${pageContext.request.contextPath}/postbyauthor?author=${x.name}">
+                                            <h5>${x.name}</h5>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4 col-lg-2">
-                        <div class="single_catagory">
-                            <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/2.jpg" alt="">
-                            <div class="catagory-title">
-                                <a href="${pageContext.request.contextPath}/singletype?type=2">
-                                    <h5>Fashion</h5>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4 col-lg-2">
-                        <div class="single_catagory">
-                            <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/3.jpg" alt="">
-                            <div class="catagory-title">
-                                <a href="${pageContext.request.contextPath}/singletype?type=3">
-                                    <h5>Foods</h5>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4 col-lg-2">
-                        <div class="single_catagory">
-                            <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/1.jpg" alt="">
-                            <div class="catagory-title">
-                                <a href="${pageContext.request.contextPath}/singletype?type=4">
-                                    <h5>Sport</h5>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4 col-lg-2">
-                        <div class="single_catagory">
-                            <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/2.jpg" alt="">
-                            <div class="catagory-title">
-                                <a href="${pageContext.request.contextPath}/singletype?type=5">
-                                    <h5>Others</h5>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
         </section>

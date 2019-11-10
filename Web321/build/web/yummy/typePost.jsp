@@ -56,7 +56,7 @@
                     <div class="col-12">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                                <li class="breadcrumb-item"><a href="home"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Archive Page</li>
                             </ol>
                         </nav>
@@ -85,8 +85,8 @@
                         <div class="single_catagory">
                             <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/2.jpg" alt="">
                             <div class="catagory-title">
-                                <a href="${pageContext.request.contextPath}/singletype?type=4">
-                                    <h5>sport</h5>
+                                <a href="${pageContext.request.contextPath}/singletype?type=2">
+                                    <h5>Fashion</h5>
                                 </a>
                             </div>
                         </div>
@@ -95,8 +95,8 @@
                         <div class="single_catagory">
                             <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/3.jpg" alt="">
                             <div class="catagory-title">
-                                <a href="${pageContext.request.contextPath}/singletype?type=2">
-                                    <h5>fashion</h5>
+                                <a href="${pageContext.request.contextPath}/singletype?type=3">
+                                    <h5>Foods</h5>
                                 </a>
                             </div>
                         </div>
@@ -105,8 +105,8 @@
                         <div class="single_catagory">
                             <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/1.jpg" alt="">
                             <div class="catagory-title">
-                                <a href="${pageContext.request.contextPath}/singletype?type=3">
-                                    <h5>Food</h5>
+                                <a href="${pageContext.request.contextPath}/singletype?type=4">
+                                    <h5>Sport</h5>
                                 </a>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                                                 <div class="post-author-date-area d-flex">
                                                     <!-- Post Author -->
                                                     <div class="post-author">
-                                                        <a href="#">By ${first.acc}</a>
+                                                        <a href="${pageContext.request.contextPath}/postbyauthor?author=${first.acc}">By ${first.acc}</a>
                                                     </div>
                                                     <!-- Post Date -->
                                                     <div class="post-date">
@@ -159,11 +159,11 @@
                                                 <div class="post-comment-share-area d-flex">
                                                     <!-- Post Favourite -->
                                                     <div class="post-favourite">
-                                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
+                                                        <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> ${first.countlike}</a>
                                                     </div>
                                                     <!-- Post Comments -->
                                                     <div class="post-comments">
-                                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> ${first.countcmt}</</a>
                                                     </div>
                                                     <!-- Post Share -->
                                                     <div class="post-share">
@@ -193,7 +193,7 @@
                                                     <div class="post-author-date-area d-flex">
                                                         <!-- Post Author -->
                                                         <div class="post-author">
-                                                            <a href="#">By ${post.acc}</a>
+                                                            <a href="${pageContext.request.contextPath}/postbyauthor?author=${post.acc}">By ${post.acc}</a>
                                                         </div>
                                                         <!-- Post Date -->
                                                         <div class="post-date">
@@ -204,11 +204,11 @@
                                                     <div class="post-comment-share-area d-flex">
                                                         <!-- Post Favourite -->
                                                         <div class="post-favourite">
-                                                            <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
+                                                            <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> ${post.countlike}</a>
                                                         </div>
                                                         <!-- Post Comments -->
                                                         <div class="post-comments">
-                                                            <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                                            <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> ${post.countcmt}</a>
                                                         </div>
                                                         <!-- Post Share -->
                                                         <div class="post-share">

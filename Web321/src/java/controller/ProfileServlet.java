@@ -51,7 +51,7 @@ public class ProfileServlet extends HttpServlet {
                 AccountDAO dao = new AccountDAO();
                 Account list = (Account) session.getAttribute("login");
                 session.setAttribute("login", dao.select(list.getUserID()));
-                
+               
                 request.getRequestDispatcher("profile.jsp").forward(request, response);
             }
         } catch (Exception e) {
@@ -92,8 +92,8 @@ public class ProfileServlet extends HttpServlet {
                 dao.profile(list.getUserID(), name, age, phone, email);
                 session.setAttribute("login", dao.select(list.getUserID()));
 
-                response.sendRedirect("profile");
-
+//                response.sendRedirect("profile");
+                doGet(request, response);
             } else {
                 doGet(request, response);
             }

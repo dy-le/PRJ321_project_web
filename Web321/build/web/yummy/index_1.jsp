@@ -69,7 +69,7 @@
                         <div class="single_catagory">
                             <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/1.jpg" alt="">
                             <div class="catagory-title">
-                                <a href="#">
+                                <a href="${pageContext.request.contextPath}/singletype?type=1">
                                     <h5>News</h5>
                                 </a>
                             </div>
@@ -79,8 +79,8 @@
                         <div class="single_catagory">
                             <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/2.jpg" alt="">
                             <div class="catagory-title">
-                                <a href="#">
-                                    <h5>sport</h5>
+                                <a href="${pageContext.request.contextPath}/singletype?type=2">
+                                    <h5>Fashion</h5>
                                 </a>
                             </div>
                         </div>
@@ -89,8 +89,8 @@
                         <div class="single_catagory">
                             <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/3.jpg" alt="">
                             <div class="catagory-title">
-                                <a href="#">
-                                    <h5>fashion</h5>
+                                <a href="${pageContext.request.contextPath}/singletype?type=3">
+                                    <h5>Foods</h5>
                                 </a>
                             </div>
                         </div>
@@ -99,8 +99,8 @@
                         <div class="single_catagory">
                             <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/1.jpg" alt="">
                             <div class="catagory-title">
-                                <a href="#">
-                                    <h5>Food</h5>
+                                <a href="${pageContext.request.contextPath}/singletype?type=4">
+                                    <h5>Sport</h5>
                                 </a>
                             </div>
                         </div>
@@ -109,7 +109,7 @@
                         <div class="single_catagory">
                             <img src="${pageContext.request.contextPath}/yummy/img/catagory-img/2.jpg" alt="">
                             <div class="catagory-title">
-                                <a href="#">
+                                <a href="${pageContext.request.contextPath}/singletype?type=5">
                                     <h5>Others</h5>
                                 </a>
                             </div>
@@ -140,7 +140,7 @@
                                             <div class="post-author-date-area d-flex">
                                                 <!-- Post Author -->
                                                 <div class="post-author">
-                                                    <a href="#">By ${first.acc}</a>
+                                                    <a href="${pageContext.request.contextPath}/postbyauthor?author=${first.acc}">By ${first.acc}</a>
                                                 </div>
                                                 <!-- Post Date -->
                                                 <div class="post-date">
@@ -185,7 +185,7 @@
                                                 <div class="post-author-date-area d-flex">
                                                     <!-- Post Author -->
                                                     <div class="post-author">
-                                                        <a href="#">By ${post.acc}</a>
+                                                        <a href="${pageContext.request.contextPath}/postbyauthor?author=${post.acc}">By ${post.acc}</a>
                                                     </div>
                                                     <!-- Post Date -->
                                                     <div class="post-date">

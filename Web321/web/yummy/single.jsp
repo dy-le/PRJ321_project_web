@@ -57,8 +57,8 @@
                     <div class="col-12">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Archive</a></li>
+                                <li class="breadcrumb-item"><a href="home"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                                <li class="breadcrumb-item"><a href="archive">Archive</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Single Post Blog</li>
                             </ol>
                         </nav>
@@ -99,7 +99,7 @@
                                             <div class="post-author-date-area d-flex">
                                                 <!-- Post Author -->
                                                 <div class="post-author">
-                                                    <a href="#">By  ${post.acc}</a>
+                                                    <a href="${pageContext.request.contextPath}/postbyauthor?author=${post.acc}">By  ${post.acc}</a>
                                                 </div>
                                                 <!-- Post Date -->
                                                 <div class="post-date">
@@ -180,7 +180,7 @@
                                                         <div class="post-author-date-area d-flex">
                                                             <!-- Post Author -->
                                                             <div class="post-author">
-                                                                <a href="#">By ${pt.acc}</a>
+                                                                <a href="${pageContext.request.contextPath}/postbyauthor?author=${pt.acc}">By ${pt.acc}</a>
                                                             </div>
                                                             <!-- Post Date -->
                                                             <div class="post-date">
@@ -213,7 +213,7 @@
                                                     <!-- Comment Content -->
                                                     <div class="comment-content">
                                                         <span class="comment-date text-muted">${x.date}</span>
-                                                        <h5>${x.name}</h5>
+                                                        <h5 onclick="javascript:location.href='${pageContext.request.contextPath}/postbyauthor?author=${x.name}'">${x.name}</h5>
                                                         <p>${x.commentct}</p>
                                                         <a href="#">Like</a>
                                                         <a class="active" href="#">Reply</a>

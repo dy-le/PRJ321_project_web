@@ -47,6 +47,8 @@ public class typeController extends HttpServlet {
                 list = dao.getPostByTypeID(typeID);
             }
             request.setAttribute("listpost", list);
+            
+            
             RequestDispatcher rd = request.getRequestDispatcher("yummy/typePost.jsp");
             rd.forward(request, response);
         } catch (Exception Ex) {

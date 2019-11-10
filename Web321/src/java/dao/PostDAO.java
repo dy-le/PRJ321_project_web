@@ -155,6 +155,33 @@ public class PostDAO {
         }
         return list;
     }
+    
+    public List<post> selectByAuthor(String name) throws Exception {
+        post pt = new post();
+        List<post> list = new ArrayList<>();
+        String sql = "select * from Paper where author=N'" + name + "'" ;
+        try {
+            Connection conn = new DBContext().getConnection();
+            ResultSet rs = conn.prepareStatement(sql).executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("PaperID");
+                String title = rs.getString("Title");
+                String author = rs.getString("Author");
+                String body = rs.getString("Body");
+                String img = rs.getString("Img");
+                int typeID = rs.getInt("TypeID");
+                Date date = rs.getDate("Date");
+                boolean Status = rs.getBoolean("Status");
+                list.add(new post(id, title, body, img, typeID, date, Status, author));
+            }
+            rs.close();
+            conn.close();
+            return list;
+        } catch (Exception e) {
+            System.out.println(e.getMessage() + "  --> postDAO.select2");
+        }
+        return list;
+    }
 
     public boolean insert(post pt) throws Exception {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -347,6 +374,8 @@ public class PostDAO {
         }//Math.ceil(a / 100)
         return (rows < size ? 1 : pages);
     }
+    
+    
 
     public static void main(String[] args) throws Exception {
         PostDAO dao = new PostDAO();
@@ -361,7 +390,8 @@ public class PostDAO {
 //        dao.deleteLike(1, 6);
 //        dao.addLike(1, 6);
 //        dao.getPost(1, 5);
-        System.out.println(dao.getCountLike(11));
+//        System.out.println(dao.getCountLike(11));
+//        System.out.println(dao.selectByAuthor("Tuấn Anh").get(0));
     }
 
 }

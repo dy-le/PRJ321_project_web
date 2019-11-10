@@ -5,9 +5,11 @@
  */
 package model;
 
+import dao.AccountDAO;
 import dao.PostDAO;
 import dao.typeDAO;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -151,5 +153,10 @@ public class post {
     public int getCountlike() {
         PostDAO dao = new PostDAO();
         return dao.getCountLike(getId());
+    }
+    
+    public List<post> getPostByAuthor() throws Exception{
+        PostDAO dao = new PostDAO();
+        return dao.selectByAuthor(getAcc());
     }
 }
